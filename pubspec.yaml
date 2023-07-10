@@ -36,7 +36,6 @@ flutter:
     - assets/fonts/
     - assets/images/custom/
     - assets/images/shared/
-    - assets/images/title_slide/
     - assets/images/title_and_photo_slide/
     - assets/images/title_and_photo_slide_alt/
 
