@@ -50,7 +50,7 @@ packages:
     source: hosted
     version: "2.4.1"
   arrow_path:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: arrow_path
       sha256: "794651f27eca2e9b4749d307b1e7fb8254fb8343124cc24ee6497f3ceff94651"
@@ -256,6 +256,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fluttershow_base:
+    dependency: "direct main"
+    description:
+      path: "../fluttershow_base"
+      relative: true
+    source: path
+    version: "0.0.1"
+  fluttershow_keynote:
+    dependency: "direct main"
+    description:
+      path: "../fluttershow_keynote"
+      relative: true
+    source: path
+    version: "0.0.1"
   glob:
     dependency: transitive
     description:
@@ -606,5 +620,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.0.0 <4.0.0"
+  dart: ">=3.0.3 <4.0.0"
   flutter: ">=3.7.0-0"

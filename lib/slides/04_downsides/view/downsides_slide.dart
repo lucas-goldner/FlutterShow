@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_show/components/widgets/layout/layout_body.dart';
-import 'package:flutter_show/components/widgets/layout/layout_header.dart';
-import 'package:flutter_show/components/widgets/list/animatable_list_text.dart';
-import 'package:flutter_show/components/widgets/text/title.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
+import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class DownsidesSlide extends HookConsumerWidget {
@@ -28,7 +25,7 @@ class DownsidesSlide extends HookConsumerWidget {
                 const SizedBox(
                   width: 80,
                 ),
-                TextTitle(
+                GradientText(
                   t.downsides,
                   gradient: FSGradients.downsidesGradient,
                 ),
@@ -39,13 +36,13 @@ class DownsidesSlide extends HookConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(left: 80),
               child: AnimatableListText(
-                [
+                texts: [
                   t.annoying,
                   t.lazy,
                   t.boring,
                   t.notFlutter,
                 ],
-                index,
+                currentIndex: index,
                 textAlign: TextAlign.start,
                 dotted: true,
                 padding: const EdgeInsets.symmetric(vertical: 8),

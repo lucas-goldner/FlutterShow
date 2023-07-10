@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_show/components/widgets/text/regular_text.dart';
-import 'package:flutter_show/components/widgets/text/title.dart';
 import 'package:flutter_show/generated/assets.gen.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
+import 'package:flutter_show/styles/fs_text_styles.dart';
 
 class OutroSlide extends StatelessWidget {
   const OutroSlide({super.key});
@@ -26,7 +25,10 @@ class OutroSlide extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    TextTitle(S.of(context).thanks),
+                    Text(
+                      S.of(context).thanks,
+                      style: FSTextStyles.title(),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(left: 28, top: 12),
                       child: Assets.images.shared.flutterIcon.svg(
@@ -37,9 +39,11 @@ class OutroSlide extends StatelessWidget {
                 ),
               ],
             ),
-            RegularText(
+            Text(
               S.of(context).repoLink,
-              fontSize: 32,
+              style: FSTextStyles.regularText(
+                fontSize: 32,
+              ),
             )
           ],
         ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_show/components/widgets/layout/layout_header.dart';
 import 'package:flutter_show/generated/assets.gen.dart';
+import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
 
 class TitleSlideOverlay extends StatelessWidget {
   const TitleSlideOverlay({super.key});

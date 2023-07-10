@@ -18,7 +18,7 @@ class FSTextStyles {
         fontSize: fontSize ?? 52,
         fontWeight: fontWeight ?? FontWeight.w500,
         fontFamily: FontFamily.graphik,
-        color: color ?? const Color.fromARGB(255, 18, 24, 38),
+        color: color ?? const Color(0xFF121826),
       );
 
   static TextStyle footerText({
@@ -30,6 +30,6 @@ class FSTextStyles {
         fontSize: fontSize ?? 24,
         fontWeight: fontWeight ?? FontWeight.w500,
         fontFamily: FontFamily.graphik,
-        color: color ?? const Color.fromARGB(255, 18, 24, 38),
+        color: color ?? const Color(0xFF121826),
       );
 }

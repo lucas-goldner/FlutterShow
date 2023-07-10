@@ -1,16 +1,12 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_show/components/model/enum/page_directional_animations.dart';
-import 'package:flutter_show/components/widgets/arrows/curvy_arrow.dart';
-import 'package:flutter_show/components/widgets/layout/layout_body.dart';
-import 'package:flutter_show/components/widgets/layout/layout_header.dart';
-import 'package:flutter_show/components/widgets/text/title.dart';
-import 'package:flutter_show/components/widgets/transitions/directional_animation.dart';
 import 'package:flutter_show/generated/assets.gen.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
+import 'package:flutter_show/styles/fs_text_styles.dart';
+import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MotivationSlide extends HookConsumerWidget {
@@ -31,7 +27,7 @@ class MotivationSlide extends HookConsumerWidget {
               Column(
                 children: [
                   const Spacer(),
-                  TextTitle(S.of(context).motiviation),
+                  Text(S.of(context).motiviation, style: FSTextStyles.title()),
                 ],
               ),
               flexUnits: 1,

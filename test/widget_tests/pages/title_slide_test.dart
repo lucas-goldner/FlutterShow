@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_show/components/widgets/text/footer_text.dart';
-import 'package:flutter_show/components/widgets/text/regular_text.dart';
-import 'package:flutter_show/components/widgets/text/title.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/main.dart';
 import 'package:flutter_show/presentation/view/presentation_slides.dart';
@@ -45,7 +42,6 @@ void main() {
     expect(find.byType(PresentationSlides), findsOneWidget);
     expect(find.byType(TitleSlide), findsOneWidget);
     expect(find.text(S.of(buildContext).flutterShow), findsOneWidget);
-    expect(find.byType(TextTitle), findsOneWidget);
   });
 
   testWidgets('Test render find subtitle', (tester) async {
@@ -57,7 +53,6 @@ void main() {
       find.text(S.of(buildContext).presentationsInFlutter),
       findsOneWidget,
     );
-    expect(find.byType(RegularText), findsOneWidget);
   });
 
   testWidgets('Test render find footer', (tester) async {
@@ -66,6 +61,5 @@ void main() {
     expect(find.byType(PresentationSlides), findsOneWidget);
     expect(find.byType(TitleSlide), findsOneWidget);
     expect(find.text(S.of(buildContext).author), findsOneWidget);
-    expect(find.byType(FooterText), findsOneWidget);
   });
 }

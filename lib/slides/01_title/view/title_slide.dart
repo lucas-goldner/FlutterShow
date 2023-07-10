@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_show/components/views/slide_title.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/slides/01_title/widgets/title_slide_overlay.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
+import 'package:fluttershow_keynote/fluttershow_keynote.dart';
 
 class TitleSlide extends StatelessWidget {
   const TitleSlide({super.key});
