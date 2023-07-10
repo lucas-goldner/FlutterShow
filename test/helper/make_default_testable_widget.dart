@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fluttercon_2023_presentation/generated/l10n.dart';
-import 'package:fluttercon_2023_presentation/main.dart';
+import 'package:flutter_show/generated/l10n.dart';
+import 'package:flutter_show/main.dart';
 
 Widget makeDefaultTestableWidget(Widget? widget) => CupertinoApp(
       key: const Key('MainApp'),

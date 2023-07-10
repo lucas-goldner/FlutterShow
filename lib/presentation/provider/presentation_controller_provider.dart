@@ -1,11 +1,39 @@
 import 'package:flutter/material.dart';
-import 'package:fluttercon_2023_presentation/presentation/model/enum/pages_of_presentation.dart';
-import 'package:fluttercon_2023_presentation/presentation/model/presentation.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_show/presentation/config/key_actions.dart';
+import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
+import 'package:flutter_show/presentation/model/presentation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PresentationController extends StateNotifier<Presentation> {
   PresentationController()
       : super(Presentation(0, 0, const Locale('en'), PageController()));
+
+  KeyEventResult handleKeyEvents(
+    RawKeyEvent event,
+    ValueNotifier<bool> keyPressed,
+  ) {
+    if (event is RawKeyDownEvent && !keyPressed.value) {
+      if (KeyActions.goToLastSlide.keybindings
+          .any((key) => key == event.physicalKey)) {
+        gotoLastItem();
+        keyPressed.value = true;
+        return KeyEventResult.handled;
+      }
+
+      if (KeyActions.goNextSlide.keybindings
+          .any((key) => key == event.physicalKey)) {
+        goToNextItem();
+        keyPressed.value = true;
+        return KeyEventResult.handled;
+      }
+
+      return KeyEventResult.ignored;
+    } else if (event is RawKeyUpEvent) {
+      keyPressed.value = false;
+    }
+    return KeyEventResult.ignored;
+  }
 
   void goToNextItem() {
     state = state.copyWith(itemIndex: state.itemIndex + 1);
@@ -16,7 +44,7 @@ class PresentationController extends StateNotifier<Presentation> {
     }
   }
 
-  void toLastItem() {
+  void gotoLastItem() {
     if (state.itemIndex == 0) {
       toLastPage();
     } else {
@@ -55,6 +83,6 @@ class PresentationController extends StateNotifier<Presentation> {
 }
 
 final presentationController =
-    StateNotifierProvider<PresentationController, Presentation>((ref) {
-  return PresentationController();
-});
+    StateNotifierProvider<PresentationController, Presentation>(
+  (ref) => PresentationController(),
+);

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_show/generated/l10n.dart';
+import 'package:flutter_show/main.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttercon_2023_presentation/generated/l10n.dart';
-import 'package:fluttercon_2023_presentation/main.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
@@ -31,6 +31,9 @@ void main() {
     await tester.pumpWidget(ProviderScope(child: makeTestableWidget()));
     await tester.pump(const Duration(seconds: 1));
     expect(find.byType(MyPresentation), findsOneWidget);
-    expect(find.text(S.of(buildContext).presentationTitle), findsOneWidget);
+    expect(
+      find.text(S.of(buildContext).flutterShow),
+      findsOneWidget,
+    );
   });
 }

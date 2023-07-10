@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_show/presentation/model/presentation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttercon_2023_presentation/presentation/model/presentation.dart';
 
 void main() {
   group('Test presentation model', () {

@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_show/components/widgets/text/footer_text.dart';
+import 'package:flutter_show/components/widgets/text/regular_text.dart';
+import 'package:flutter_show/components/widgets/text/title.dart';
+import 'package:flutter_show/generated/l10n.dart';
+import 'package:flutter_show/main.dart';
+import 'package:flutter_show/presentation/view/presentation_slides.dart';
+import 'package:flutter_show/slides/01_title/view/title_slide.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttercon_2023_presentation/generated/l10n.dart';
-import 'package:fluttercon_2023_presentation/main.dart';
-import 'package:fluttercon_2023_presentation/pages/01_title/view/title_slide.dart';
-import 'package:fluttercon_2023_presentation/presentation/view/presentation_slides.dart';
-import 'package:fluttercon_2023_presentation/slides/widgets/text/footer_text.dart';
-import 'package:fluttercon_2023_presentation/slides/widgets/text/regular_text.dart';
-import 'package:fluttercon_2023_presentation/slides/widgets/text/title.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
@@ -44,7 +44,7 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(find.byType(PresentationSlides), findsOneWidget);
     expect(find.byType(TitleSlide), findsOneWidget);
-    expect(find.text(S.of(buildContext).presentationTitle), findsOneWidget);
+    expect(find.text(S.of(buildContext).flutterShow), findsOneWidget);
     expect(find.byType(TextTitle), findsOneWidget);
   });
 
@@ -53,7 +53,10 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(find.byType(PresentationSlides), findsOneWidget);
     expect(find.byType(TitleSlide), findsOneWidget);
-    expect(find.text(S.of(buildContext).presentationSubtitle), findsOneWidget);
+    expect(
+      find.text(S.of(buildContext).presentationsInFlutter),
+      findsOneWidget,
+    );
     expect(find.byType(RegularText), findsOneWidget);
   });
 
@@ -62,7 +65,7 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(find.byType(PresentationSlides), findsOneWidget);
     expect(find.byType(TitleSlide), findsOneWidget);
-    expect(find.text(S.of(buildContext).presentationFooter), findsOneWidget);
+    expect(find.text(S.of(buildContext).author), findsOneWidget);
     expect(find.byType(FooterText), findsOneWidget);
   });
 }

@@ -1,7 +1,6 @@
+import 'package:flutter_show/main.dart';
+import 'package:flutter_show/presentation/view/presentation_slides.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttercon_2023_presentation/main.dart';
-import 'package:fluttercon_2023_presentation/presentation/view/presentation_slides.dart';
-
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {

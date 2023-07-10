@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_show/components/widgets/text/gradient_text.dart';
+import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fluttercon_2023_presentation/slides/widgets/text/gradient_text.dart';
-import 'package:fluttercon_2023_presentation/styles/fc_gradients.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../helper/make_default_testable_widget.dart';
@@ -12,7 +12,7 @@ void main() {
           const CupertinoPageScaffold(
             child: Column(
               children: [
-                GradientText('GradientText', gradient: FCGradients.titlePrimary)
+                GradientText('GradientText', gradient: FSGradients.titlePrimary)
               ],
             ),
           ),

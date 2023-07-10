@@ -1,5 +1,5 @@
-name: fluttercon_2023_presentation
-description: My cool presentation for the fluttercon 2023.
+name: flutter_show
+description: FlutterShow is an easy-to-use framework built in Flutter for crafting engaging and interactive presentations
 publish_to: "none"
 
 version: 1.0.0+1

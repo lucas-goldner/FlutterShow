@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fluttercon_2023_presentation/generated/l10n.dart';
-import 'package:fluttercon_2023_presentation/presentation/view/presentation_slides.dart';
+import 'package:flutter_show/generated/l10n.dart';
+import 'package:flutter_show/presentation/view/presentation_slides.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
