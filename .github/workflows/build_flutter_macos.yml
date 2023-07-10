@@ -1,0 +1,24 @@
+name: CI
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  flutter_test:
+    name: Run flutter test, analyze and build for macos
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Flutter get
+        uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+          architecture: x64
+      - run: flutter pub get
+      - run: dart pub global activate flutter_gen
+      - run: fluttergen
+      - run: flutter pub run intl_utils:generate
+      - run: flutter analyze
+      - run: flutter test
+      - run: flutter build macos --release

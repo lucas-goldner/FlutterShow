@@ -1,0 +1,218 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  language:
+    strict-inference: true
+    strict-raw-types: true
+  plugins:
+    - dart_code_metrics
+  strong-mode:
+    implicit-casts: false
+    implicit-dynamic: false
+  errors:
+    invalid_annotation_target: ignore
+    public_member_api_docs: ignore
+    invalid_use_of_protected_member: ignore
+    implicit_dynamic_parameter: ignore
+  exclude:
+    - "lib/generated/**"
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method:
+        exclude:
+          - test/**
+    - long-parameter-list
+  metrics:
+    cyclomatic-complexity: 20
+    maintainability-index: 50
+    maximum-nesting: 5
+    number-of-parameters: 5
+    source-lines-of-code: 50
+    technical-debt:
+      threshold: 16
+      todo-cost: 4
+      ignore-cost: 8
+      ignore-for-file-cost: 16
+      as-dynamic-cost: 16
+      deprecated-annotations-cost: 2
+      file-nullsafety-migration-cost: 2
+      unit-type: "hours"
+    metrics-exclude:
+      - "test/**"
+      - "lib/generated/**"
+    rules-exclude:
+      - "lib/generated/**"
+    rules:
+      - avoid-collection-methods-with-unrelated-types
+      - avoid-dynamic:
+          exclude:
+            - test/**
+      - avoid-global-state
+      - avoid-late-keyword:
+          exclude:
+            - test/**
+      - avoid-missing-enum-constant-in-map
+      - avoid-nested-conditional-expressions:
+          acceptance-level: 2
+      - avoid-non-null-assertion
+      - avoid-unnecessary-type-assertions
+      - avoid-unnecessary-type-casts
+      - avoid-unrelated-type-assertions
+      - avoid-unused-parameters
+      - binary-expression-operand-order
+      - double-literal-format
+      - format-comment
+      - member-ordering:
+        alphabetize: true
+        order:
+          - public-fields
+          - private-fields
+          - constructors
+      - newline-before-return
+      - no-boolean-literal-compare
+      - no-empty-block
+      - no-equal-arguments:
+          ignored-parameters:
+            - height
+            - width
+      - no-equal-then-else
+      - no-magic-number
+      - no-object-declaration
+      - prefer-async-await
+      - prefer-commenting-analyzer-ignores
+      - prefer-conditional-expressions
+      - prefer-correct-identifier-length:
+          exceptions:
+            - id
+            - ok
+      - prefer-correct-type-name:
+          max-length: 44
+      - prefer-first
+      - prefer-last
+      - prefer-immediate-return
+      - prefer-match-file-name:
+          exclude:
+            - test/**
+      - prefer-moving-to-variable:
+          exclude:
+            - test/**
+      - prefer-trailing-comma
+      - always-remove-listener
+      - avoid-border-all
+      - avoid-returning-widgets
+      - avoid-unnecessary-setstate
+      - avoid-wrapping-in-padding
+      - prefer-const-border-radius
+      - prefer-extracting-callbacks
+      - prefer-single-widget-per-file:
+          ignore-private-widgets: true
+
+linter:
+  rules:
+    - always_declare_return_types
+    - always_use_package_imports:
+        exclude: "lib/generated/**"
+    - avoid_annotating_with_dynamic
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_catches_without_on_clauses
+    - avoid_catching_errors
+    - avoid_double_and_int_checks
+    - avoid_dynamic_calls
+    - avoid_equals_and_hash_code_on_mutable_classes
+    - avoid_escaping_inner_quotes
+    - avoid_field_initializers_in_const_classes
+    - avoid_final_parameters
+    - avoid_implementing_value_types
+    - avoid_js_rounded_ints
+    - avoid_multiple_declarations_per_line
+    - avoid_positional_boolean_parameters
+    - avoid_print
+    - avoid_private_typedef_functions
+    - avoid_returning_null
+    - avoid_returning_null_for_future
+    - avoid_returning_this
+    - avoid_setters_without_getters
+    - avoid_slow_async_io
+    - avoid_type_to_string
+    - avoid_types_on_closure_parameters
+    - avoid_unnecessary_containers
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
+    - avoid_web_libraries_in_flutter
+    - cancel_subscriptions
+    - cascade_invocations
+    - close_sinks
+    - comment_references
+    - conditional_uri_does_not_exist
+    - depend_on_referenced_packages
+    - deprecated_consistency
+    - directives_ordering
+    - do_not_use_environment
+    - eol_at_end_of_file
+    - invariant_booleans
+    - join_return_with_assignment
+    - leading_newlines_in_multiline_strings
+    - library_private_types_in_public_api
+    - literal_only_boolean_expressions
+    - missing_whitespace_between_adjacent_strings
+    - no_default_cases
+    - no_leading_underscores_for_library_prefixes
+    - no_leading_underscores_for_local_identifiers
+    - no_logic_in_create_state
+    - no_runtimeType_toString
+    - noop_primitive_operations
+    - null_check_on_nullable_type_parameter
+    - omit_local_variable_types
+    - only_throw_errors
+    - package_api_docs
+    - parameter_assignments
+    - prefer_asserts_in_initializer_lists
+    - prefer_asserts_with_message
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - prefer_constructors_over_static_methods
+    - prefer_double_quotes:
+        exclude: "lib/generated/**"
+    - prefer_expression_function_bodies:
+        exclude: "lib/generated/**"
+    - prefer_final_in_for_each
+    - prefer_final_locals
+    - prefer_foreach
+    - prefer_if_elements_to_conditional_expressions
+    - prefer_int_literals
+    - prefer_interpolation_to_compose_strings
+    - prefer_mixin
+    - prefer_null_aware_method_calls
+    - public_member_api_docs: false
+    - secure_pubspec_urls
+    - sort_pub_dependencies
+    - sort_unnamed_constructors_first
+    - test_types_in_equals
+    - throw_in_finally
+    - tighten_type_of_initializing_formals
+    - type_annotate_public_apis
+    - unawaited_futures
+    - unnecessary_await_in_return
+    - unnecessary_constructor_name
+    - unnecessary_lambdas
+    - unnecessary_late
+    - unnecessary_null_aware_assignments
+    - unnecessary_null_checks
+    - unnecessary_nullable_for_final_variable_declarations
+    - unnecessary_parenthesis
+    - unnecessary_raw_strings
+    - unnecessary_statements
+    - unsafe_html
+    - use_if_null_to_convert_nulls_to_bools
+    - use_is_even_rather_than_modulo
+    - use_key_in_widget_constructors
+    - use_late_for_private_fields_and_variables
+    - use_named_constants
+    - use_raw_strings
+    - use_setters_to_change_properties
+    - use_string_buffers
+    - use_test_throws_matchers
+    - use_to_and_as_if_applicable

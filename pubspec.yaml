@@ -1,0 +1,67 @@
+name: fluttercon_2023_presentation
+description: My cool presentation for the fluttercon 2023.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  arrow_path: ^3.1.0
+  confetti: ^0.7.0
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_airpods: ^1.0.4
+  flutter_animate: ^4.1.1+1
+  flutter_cube: ^0.1.1
+  flutter_hooks: ^0.18.6
+  flutter_localizations:
+    sdk: flutter
+  flutter_svg: ^2.0.5
+  hooks_riverpod: ^2.3.6
+  intl: ^0.18.0
+  intl_utils: ^2.8.1
+  socket_io_client: ^2.0.2
+
+dev_dependencies:
+  dart_code_metrics: ^5.7.3
+  flutter_gen_runner: ^5.1.0+1
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^4.0.0+1
+
+flutter:
+  assets:
+    - assets/fonts/
+    - assets/images/custom/
+    - assets/images/shared/
+    - assets/images/title_slide/
+    - assets/images/title_and_photo_slide/
+    - assets/images/title_and_photo_slide_alt/
+    - assets/model/
+  #   - assets/audio/
+
+  fonts:
+    - family: Graphik
+      fonts:
+        - asset: assets/fonts/GraphikSemibold.otf
+          weight: 600
+        - asset: assets/fonts/GraphikMedium.otf
+          weight: 500
+        - asset: assets/fonts/GraphikRegular.otf
+          weight: 400
+
+flutter_intl:
+  enabled: true
+  main_locale: en
+  arb_dir: assets/l10n
+  ouput_dir: lib/generated
+
+flutter_gen:
+  output: lib/generated/
+  line_length: 80
+  integrations:
+    flutter_svg: true
