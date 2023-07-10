@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/slides/01_title/widgets/title_slide_overlay.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
+import 'package:flutter_show/styles/fs_text_styles.dart';
 import 'package:fluttershow_keynote/fluttershow_keynote.dart';
 
 class TitleSlide extends StatelessWidget {
@@ -17,10 +18,14 @@ class TitleSlide extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          SlideTitle(
+          KeynoteTitleSlide(
             titleText: t.flutterShow,
             subTitleText: t.presentationsInFlutter,
             footerText: t.author,
+            titleGradient: FSGradients.animatedTitlePrimary,
+            titleStyle: FSTextStyles.title(),
+            subtitleStyle: FSTextStyles.regularText(),
+            footerStyle: FSTextStyles.footerText(),
           ),
           const TitleSlideOverlay()
         ],

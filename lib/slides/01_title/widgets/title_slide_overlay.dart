@@ -11,13 +11,14 @@ class TitleSlideOverlay extends StatelessWidget {
     return Column(
       children: [
         LayoutHeader(
-          Row(
+          Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 12),
+                padding: const EdgeInsets.only(left: 20, top: 20),
                 child:
                     Assets.images.shared.flutterIcon.svg(width: 80, height: 80),
               ),
+              const Spacer(),
             ],
           ),
           flexUnits: 1,
