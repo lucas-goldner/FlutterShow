@@ -15,9 +15,9 @@ class TitleSlide extends StatelessWidget {
         child: Stack(
           children: [
             SlideTitle(
-              titleText: S.of(context).presentationTitle,
-              subTitleText: S.of(context).presentationSubtitle,
-              footerText: S.of(context).presentationFooter,
+              titleText: S.of(context).flutterShow,
+              subTitleText: S.of(context).presentationsInFlutter,
+              footerText: S.of(context).author,
             ),
             const TitleSlideOverlay()
           ],

@@ -50,31 +50,31 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `FFIGen - The solution ?`
-  String get presentationTitle {
+  /// `FlutterShow`
+  String get flutterShow {
     return Intl.message(
-      'FFIGen - The solution ?',
-      name: 'presentationTitle',
+      'FlutterShow',
+      name: 'flutterShow',
       desc: '',
       args: [],
     );
   }
 
-  /// `Comparing ways of accessing native functions`
-  String get presentationSubtitle {
+  /// `Presentations made easy in Flutter`
+  String get presentationsInFlutter {
     return Intl.message(
-      'Comparing ways of accessing native functions',
-      name: 'presentationSubtitle',
+      'Presentations made easy in Flutter',
+      name: 'presentationsInFlutter',
       desc: '',
       args: [],
     );
   }
 
-  /// `Lucas Goldner, 10.05.2023`
-  String get presentationFooter {
+  /// `Made by Lucas Goldner`
+  String get author {
     return Intl.message(
-      'Lucas Goldner, 10.05.2023',
-      name: 'presentationFooter',
+      'Made by Lucas Goldner',
+      name: 'author',
       desc: '',
       args: [],
     );
@@ -90,261 +90,61 @@ class S {
     );
   }
 
-  /// `Prologue`
-  String get prologue {
+  /// `Design`
+  String get design {
     return Intl.message(
-      'Prologue',
-      name: 'prologue',
+      'Design',
+      name: 'design',
       desc: '',
       args: [],
     );
   }
 
-  /// `Method / Eventchannels`
-  String get methodEventChannels {
+  /// `Code`
+  String get code {
     return Intl.message(
-      'Method / Eventchannels',
-      name: 'methodEventChannels',
+      'Code',
+      name: 'code',
       desc: '',
       args: [],
     );
   }
 
-  /// `FFIGen Setup`
-  String get ffigenSetup {
+  /// `Test`
+  String get test {
     return Intl.message(
-      'FFIGen Setup',
-      name: 'ffigenSetup',
+      'Test',
+      name: 'test',
       desc: '',
       args: [],
     );
   }
 
-  /// `Run FFIGen`
-  String get runFfigen {
+  /// `Present`
+  String get present {
     return Intl.message(
-      'Run FFIGen',
-      name: 'runFfigen',
+      'Present',
+      name: 'present',
       desc: '',
       args: [],
     );
   }
 
-  /// `Benefits and downsides`
-  String get benefitsAndDownsides {
+  /// `Party 🎉`
+  String get party {
     return Intl.message(
-      'Benefits and downsides',
-      name: 'benefitsAndDownsides',
+      'Party 🎉',
+      name: 'party',
       desc: '',
       args: [],
     );
   }
 
-  /// `Pushups: {count} / 5`
-  String pushups(Object count) {
+  /// `Motiviation`
+  String get motiviation {
     return Intl.message(
-      'Pushups: $count / 5',
-      name: 'pushups',
-      desc: '',
-      args: [count],
-    );
-  }
-
-  /// `Motivation`
-  String get motivation {
-    return Intl.message(
-      'Motivation',
-      name: 'motivation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Method Channel`
-  String get methodChannel {
-    return Intl.message(
-      'Method Channel',
-      name: 'methodChannel',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Flutter`
-  String get flutter {
-    return Intl.message(
-      'Flutter',
-      name: 'flutter',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Event Channel`
-  String get eventChannels {
-    return Intl.message(
-      'Event Channel',
-      name: 'eventChannels',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Invokes functions`
-  String get invokeFunctions {
-    return Intl.message(
-      'Invokes functions',
-      name: 'invokeFunctions',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Receives value`
-  String get receiveValue {
-    return Intl.message(
-      'Receives value',
-      name: 'receiveValue',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Starts listening`
-  String get startsListening {
-    return Intl.message(
-      'Starts listening',
-      name: 'startsListening',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Implements FlutterStreamHandler interface`
-  String get implementsFlutterStreamHandler {
-    return Intl.message(
-      'Implements FlutterStreamHandler interface',
-      name: 'implementsFlutterStreamHandler',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Receives Events from Stream`
-  String get receivesEvents {
-    return Intl.message(
-      'Receives Events from Stream',
-      name: 'receivesEvents',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Typical way`
-  String get TypicalWay {
-    return Intl.message(
-      'Typical way',
-      name: 'TypicalWay',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Eventchannel - Flutter setup`
-  String get eventChannelsFlutter {
-    return Intl.message(
-      'Eventchannel - Flutter setup',
-      name: 'eventChannelsFlutter',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Eventchannel - iOS setup`
-  String get eventChannelsiOS {
-    return Intl.message(
-      'Eventchannel - iOS setup',
-      name: 'eventChannelsiOS',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `FFIGen`
-  String get ffigen {
-    return Intl.message(
-      'FFIGen',
-      name: 'ffigen',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `FFI -> Foreign function interface`
-  String get ffiExplain {
-    return Intl.message(
-      'FFI -> Foreign function interface',
-      name: 'ffiExplain',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Bindings generator for FFI bindings`
-  String get ffigenexplain {
-    return Intl.message(
-      'Bindings generator for FFI bindings',
-      name: 'ffigenexplain',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Generation requires config`
-  String get requiresConfig {
-    return Intl.message(
-      'Generation requires config',
-      name: 'requiresConfig',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Compatible with various languages`
-  String get compatibleLanguages {
-    return Intl.message(
-      'Compatible with various languages',
-      name: 'compatibleLanguages',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The master file`
-  String get theMasterFile {
-    return Intl.message(
-      'The master file',
-      name: 'theMasterFile',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Include framework`
-  String get includeFramework {
-    return Intl.message(
-      'Include framework',
-      name: 'includeFramework',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Using the bindings`
-  String get usingTheBindings {
-    return Intl.message(
-      'Using the bindings',
-      name: 'usingTheBindings',
+      'Motiviation',
+      name: 'motiviation',
       desc: '',
       args: [],
     );
@@ -360,6 +160,46 @@ class S {
     );
   }
 
+  /// `Annoying`
+  String get annoying {
+    return Intl.message(
+      'Annoying',
+      name: 'annoying',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lazy`
+  String get lazy {
+    return Intl.message(
+      'Lazy',
+      name: 'lazy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Boring`
+  String get boring {
+    return Intl.message(
+      'Boring',
+      name: 'boring',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Its not Flutter`
+  String get notFlutter {
+    return Intl.message(
+      'Its not Flutter',
+      name: 'notFlutter',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Benefits`
   String get benefits {
     return Intl.message(
@@ -370,131 +210,71 @@ class S {
     );
   }
 
-  /// `Initial setup can take time`
-  String get downsideSetup {
+  /// `Great`
+  String get great {
     return Intl.message(
-      'Initial setup can take time',
-      name: 'downsideSetup',
+      'Great',
+      name: 'great',
       desc: '',
       args: [],
     );
   }
 
-  /// `Output can be difficult`
-  String get downsideOutput {
+  /// `Awesome`
+  String get awesome {
     return Intl.message(
-      'Output can be difficult',
-      name: 'downsideOutput',
+      'Awesome',
+      name: 'awesome',
       desc: '',
       args: [],
     );
   }
 
-  /// `Less 'control' than using methodchannels`
-  String get downsideControl {
+  /// `Outstanding`
+  String get outstanding {
     return Intl.message(
-      'Less \'control\' than using methodchannels',
-      name: 'downsideControl',
+      'Outstanding',
+      name: 'outstanding',
       desc: '',
       args: [],
     );
   }
 
-  /// `Possible to will not work (ObjC and Swift)`
-  String get downsideWontwork {
+  /// `Amazing`
+  String get amazing {
     return Intl.message(
-      'Possible to will not work (ObjC and Swift)',
-      name: 'downsideWontwork',
+      'Amazing',
+      name: 'amazing',
       desc: '',
       args: [],
     );
   }
 
-  /// `Fast development`
-  String get benefitFast {
+  /// `Made with Flutter💙`
+  String get madeWithFlutter {
     return Intl.message(
-      'Fast development',
-      name: 'benefitFast',
+      'Made with Flutter💙',
+      name: 'madeWithFlutter',
       desc: '',
       args: [],
     );
   }
 
-  /// `Only one config file`
-  String get benefitConfig {
-    return Intl.message(
-      'Only one config file',
-      name: 'benefitConfig',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Highly customizable`
-  String get benefitCustomizable {
-    return Intl.message(
-      'Highly customizable',
-      name: 'benefitCustomizable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Testable`
-  String get benefitTestable {
-    return Intl.message(
-      'Testable',
-      name: 'benefitTestable',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Supports various languages`
-  String get benefitManyLanguages {
-    return Intl.message(
-      'Supports various languages',
-      name: 'benefitManyLanguages',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Thanks`
+  /// `Thanks!`
   String get thanks {
     return Intl.message(
-      'Thanks',
+      'Thanks!',
       name: 'thanks',
       desc: '',
       args: [],
     );
   }
 
-  /// `https://github.com/lucas-goldner/fluttercon_2023_presentation`
+  /// `https://github.com/lucas-goldner/FlutterShow`
   String get repoLink {
     return Intl.message(
-      'https://github.com/lucas-goldner/fluttercon_2023_presentation',
+      'https://github.com/lucas-goldner/FlutterShow',
       name: 'repoLink',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Dart`
-  String get dart {
-    return Intl.message(
-      'Dart',
-      name: 'dart',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Swift`
-  String get swift {
-    return Intl.message(
-      'Swift',
-      name: 'swift',
       desc: '',
       args: [],
     );

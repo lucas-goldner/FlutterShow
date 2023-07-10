@@ -30,7 +30,7 @@ class MotivationSlide extends HookConsumerWidget {
               Column(
                 children: [
                   const Spacer(),
-                  TextTitle(S.of(context).motivation),
+                  TextTitle(S.of(context).motiviation),
                 ],
               ),
               flexUnits: 1,
@@ -41,9 +41,7 @@ class MotivationSlide extends HookConsumerWidget {
                 children: [
                   Visibility(
                     visible: index == 2,
-                    child: Assets.images.custom.motionData.image(
-                      fit: BoxFit.contain,
-                    ),
+                    child: Assets.images.shared.flutterIcon.svg(),
                   ),
                   Visibility(
                     visible: index != 2,
@@ -54,9 +52,8 @@ class MotivationSlide extends HookConsumerWidget {
                           visible: index >= 0,
                           child: Row(
                             children: [
-                              Assets.images.custom.giraph.image(
+                              Assets.images.shared.flutterIcon.svg(
                                 height: 400,
-                                fit: BoxFit.contain,
                               ),
                               const Padding(
                                 padding: EdgeInsets.only(top: 400),
@@ -71,9 +68,8 @@ class MotivationSlide extends HookConsumerWidget {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 80),
-                                child: Assets.images.custom.motionData.image(
+                                child: Assets.images.shared.flutterIcon.svg(
                                   height: 520,
-                                  fit: BoxFit.contain,
                                 ),
                               ),
                               Padding(
@@ -88,9 +84,8 @@ class MotivationSlide extends HookConsumerWidget {
                         ),
                         Visibility(
                           visible: index >= 3,
-                          child: Assets.images.custom.pushup.image(
+                          child: Assets.images.shared.flutterIcon.svg(
                             height: 60,
-                            fit: BoxFit.cover,
                           ),
                         ),
                       ],

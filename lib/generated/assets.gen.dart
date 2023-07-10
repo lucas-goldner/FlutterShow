@@ -36,116 +36,16 @@ class $AssetsImagesGen {
       const $AssetsImagesTitleAndPhotoSlideGen();
   $AssetsImagesTitleAndPhotoSlideAltGen get titleAndPhotoSlideAlt =>
       const $AssetsImagesTitleAndPhotoSlideAltGen();
-  $AssetsImagesTitleSlideGen get titleSlide =>
-      const $AssetsImagesTitleSlideGen();
-}
-
-class $AssetsModelGen {
-  const $AssetsModelGen();
-
-  /// File path: assets/model/dash.blend
-  String get dashBlend => 'assets/model/dash.blend';
-
-  /// File path: assets/model/dash.mtl
-  String get dashMtl => 'assets/model/dash.mtl';
-
-  /// File path: assets/model/dash.obj
-  String get dashObj => 'assets/model/dash.obj';
-
-  /// List of all assets
-  List<String> get values => [dashBlend, dashMtl, dashObj];
 }
 
 class $AssetsImagesCustomGen {
   const $AssetsImagesCustomGen();
 
-  /// File path: assets/images/custom/airpods.png
-  AssetGenImage get airpods =>
-      const AssetGenImage('assets/images/custom/airpods.png');
-
-  /// File path: assets/images/custom/bitfactory_logo_long.png
-  AssetGenImage get bitfactoryLogoLong =>
-      const AssetGenImage('assets/images/custom/bitfactory_logo_long.png');
-
-  /// File path: assets/images/custom/bitfactory_logo_small.png
-  AssetGenImage get bitfactoryLogoSmall =>
-      const AssetGenImage('assets/images/custom/bitfactory_logo_small.png');
-
-  /// File path: assets/images/custom/cm_headphone_provider_ios.png
-  AssetGenImage get cmHeadphoneProviderIos =>
-      const AssetGenImage('assets/images/custom/cm_headphone_provider_ios.png');
-
-  /// File path: assets/images/custom/cmheadphone.png
-  AssetGenImage get cmheadphone =>
-      const AssetGenImage('assets/images/custom/cmheadphone.png');
-
-  /// File path: assets/images/custom/cmheadphone_provider.png
-  AssetGenImage get cmheadphoneProvider =>
-      const AssetGenImage('assets/images/custom/cmheadphone_provider.png');
-
-  /// File path: assets/images/custom/cmheadphone_provider_short.png
-  AssetGenImage get cmheadphoneProviderShort => const AssetGenImage(
-      'assets/images/custom/cmheadphone_provider_short.png');
-
-  /// File path: assets/images/custom/ffigen_config.png
-  AssetGenImage get ffigenConfig =>
-      const AssetGenImage('assets/images/custom/ffigen_config.png');
-
-  /// File path: assets/images/custom/flutter_airpod_init.png
-  AssetGenImage get flutterAirpodInit =>
-      const AssetGenImage('assets/images/custom/flutter_airpod_init.png');
-
-  /// File path: assets/images/custom/flutter_airpod_ios.png
-  AssetGenImage get flutterAirpodIos =>
-      const AssetGenImage('assets/images/custom/flutter_airpod_ios.png');
-
-  /// File path: assets/images/custom/giraph.png
-  AssetGenImage get giraph =>
-      const AssetGenImage('assets/images/custom/giraph.png');
-
-  /// File path: assets/images/custom/motion_data.png
-  AssetGenImage get motionData =>
-      const AssetGenImage('assets/images/custom/motion_data.png');
-
-  /// File path: assets/images/custom/pushup.png
-  AssetGenImage get pushup =>
-      const AssetGenImage('assets/images/custom/pushup.png');
-
   /// File path: assets/images/custom/qr.png
   AssetGenImage get qr => const AssetGenImage('assets/images/custom/qr.png');
 
-  /// File path: assets/images/custom/xcode_linking_0.png
-  AssetGenImage get xcodeLinking0 =>
-      const AssetGenImage('assets/images/custom/xcode_linking_0.png');
-
-  /// File path: assets/images/custom/xcode_linking_1.png
-  AssetGenImage get xcodeLinking1 =>
-      const AssetGenImage('assets/images/custom/xcode_linking_1.png');
-
-  /// File path: assets/images/custom/xcode_linking_2.png
-  AssetGenImage get xcodeLinking2 =>
-      const AssetGenImage('assets/images/custom/xcode_linking_2.png');
-
   /// List of all assets
-  List<AssetGenImage> get values => [
-        airpods,
-        bitfactoryLogoLong,
-        bitfactoryLogoSmall,
-        cmHeadphoneProviderIos,
-        cmheadphone,
-        cmheadphoneProvider,
-        cmheadphoneProviderShort,
-        ffigenConfig,
-        flutterAirpodInit,
-        flutterAirpodIos,
-        giraph,
-        motionData,
-        pushup,
-        qr,
-        xcodeLinking0,
-        xcodeLinking1,
-        xcodeLinking2
-      ];
+  List<AssetGenImage> get values => [qr];
 }
 
 class $AssetsImagesSharedGen {
@@ -155,12 +55,8 @@ class $AssetsImagesSharedGen {
   SvgGenImage get flutterIcon =>
       const SvgGenImage('assets/images/shared/flutter_icon.svg');
 
-  /// File path: assets/images/shared/fluttercon_logo.svg
-  SvgGenImage get flutterconLogo =>
-      const SvgGenImage('assets/images/shared/fluttercon_logo.svg');
-
   /// List of all assets
-  List<SvgGenImage> get values => [flutterIcon, flutterconLogo];
+  List<SvgGenImage> get values => [flutterIcon];
 }
 
 class $AssetsImagesTitleAndPhotoSlideGen {
@@ -185,32 +81,11 @@ class $AssetsImagesTitleAndPhotoSlideAltGen {
   List<AssetGenImage> get values => [titleAndPhotoImageAlt];
 }
 
-class $AssetsImagesTitleSlideGen {
-  const $AssetsImagesTitleSlideGen();
-
-  /// File path: assets/images/title_slide/fluttercon_particle_circle.svg
-  SvgGenImage get flutterconParticleCircle => const SvgGenImage(
-      'assets/images/title_slide/fluttercon_particle_circle.svg');
-
-  /// File path: assets/images/title_slide/fluttercon_tower.svg
-  SvgGenImage get flutterconTower =>
-      const SvgGenImage('assets/images/title_slide/fluttercon_tower.svg');
-
-  /// File path: assets/images/title_slide/fluttercon_tower_base.svg
-  SvgGenImage get flutterconTowerBase =>
-      const SvgGenImage('assets/images/title_slide/fluttercon_tower_base.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values =>
-      [flutterconParticleCircle, flutterconTower, flutterconTowerBase];
-}
-
 class Assets {
   Assets._();
 
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
-  static const $AssetsModelGen model = $AssetsModelGen();
 }
 
 class AssetGenImage {
