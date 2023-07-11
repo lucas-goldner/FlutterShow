@@ -1,11 +1,11 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_show/generated/assets.gen.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -38,7 +38,9 @@ class MotivationSlide extends HookConsumerWidget {
                 children: [
                   Visibility(
                     visible: index == 2,
-                    child: Assets.images.shared.flutterIcon.svg(),
+                    child: SvgPicture.asset(
+                      'assets/images/shared/flutter_icon.svg',
+                    ),
                   ),
                   Visibility(
                     visible: index != 2,
@@ -49,7 +51,8 @@ class MotivationSlide extends HookConsumerWidget {
                           visible: index >= 0,
                           child: Row(
                             children: [
-                              Assets.images.shared.flutterIcon.svg(
+                              SvgPicture.asset(
+                                'assets/images/shared/flutter_icon.svg',
                                 height: 400,
                               ),
                               const Padding(
@@ -65,7 +68,8 @@ class MotivationSlide extends HookConsumerWidget {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(bottom: 80),
-                                child: Assets.images.shared.flutterIcon.svg(
+                                child: SvgPicture.asset(
+                                  'assets/images/shared/flutter_icon.svg',
                                   height: 520,
                                 ),
                               ),
@@ -81,7 +85,8 @@ class MotivationSlide extends HookConsumerWidget {
                         ),
                         Visibility(
                           visible: index >= 3,
-                          child: Assets.images.shared.flutterIcon.svg(
+                          child: SvgPicture.asset(
+                            'assets/images/shared/flutter_icon.svg',
                             height: 60,
                           ),
                         ),

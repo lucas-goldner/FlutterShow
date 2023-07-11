@@ -14,7 +14,7 @@ dependencies:
   flutter_hooks: ^0.18.6
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.5
+  flutter_svg: ^2.0.7
   fluttershow_base:
     path: "../fluttershow_base"
   fluttershow_keynote:
@@ -54,9 +54,3 @@ flutter_intl:
   main_locale: en
   arb_dir: assets/l10n
   ouput_dir: lib/generated
-
-flutter_gen:
-  output: lib/generated/
-  line_length: 80
-  integrations:
-    flutter_svg: true

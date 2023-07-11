@@ -3,10 +3,6 @@
   "presentationsInFlutter": "Presentations made easy in Flutter",
   "author": "Made by Lucas Goldner",
   "agenda": "Agenda",
-  "design": "Design",
-  "code": "Code",
-  "test": "Test",
-  "present": "Present",
   "party": "Party 🎉",
   "motiviation": "Motiviation",
   "downsides": "Downsides",
@@ -21,5 +17,6 @@
   "amazing": "Amazing",
   "madeWithFlutter": "Made with Flutter💙",
   "thanks": "Thanks!",
-  "repoLink": "https://github.com/lucas-goldner/FlutterShow"
+  "repoLink": "https://github.com/lucas-goldner/FlutterShow",
+  "sideWidget": "Side Widget"
 }

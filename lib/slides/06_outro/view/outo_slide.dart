@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_show/generated/assets.gen.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class OutroSlide extends StatelessWidget {
   const OutroSlide({super.key});
@@ -18,8 +18,11 @@ class OutroSlide extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Assets.images.custom.qr
-                    .image(height: 400, width: 400, fit: BoxFit.contain),
+                SvgPicture.asset(
+                  'assets/images/custom/qr.svg',
+                  height: 400,
+                  width: 400,
+                ),
                 const SizedBox(
                   width: 40,
                 ),
@@ -31,7 +34,8 @@ class OutroSlide extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 28, top: 12),
-                      child: Assets.images.shared.flutterIcon.svg(
+                      child: SvgPicture.asset(
+                        'assets/images/shared/flutter_icon.svg',
                         height: 100,
                       ),
                     )

@@ -8,10 +8,7 @@ import 'package:flutter_show/slides/06_outro/view/outo_slide.dart';
 
 enum PagesOfPresentation {
   titleSlide(TitleSlide(), 1),
-  agendaSlide(
-    AgendaSlide(),
-    5,
-  ),
+  agendaSlide(AgendaSlide(), 1),
   motivation(MotivationSlide(), 4),
   downsides(DownsidesSlide(), 4),
   benefits(BenefitsSlide(), 5),

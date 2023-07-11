@@ -29,8 +29,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "awesome": MessageLookupByLibrary.simpleMessage("Awesome"),
         "benefits": MessageLookupByLibrary.simpleMessage("Benefits"),
         "boring": MessageLookupByLibrary.simpleMessage("Boring"),
-        "code": MessageLookupByLibrary.simpleMessage("Code"),
-        "design": MessageLookupByLibrary.simpleMessage("Design"),
         "downsides": MessageLookupByLibrary.simpleMessage("Downsides"),
         "flutterShow": MessageLookupByLibrary.simpleMessage("FlutterShow"),
         "great": MessageLookupByLibrary.simpleMessage("Great"),
@@ -41,12 +39,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "notFlutter": MessageLookupByLibrary.simpleMessage("Its not Flutter"),
         "outstanding": MessageLookupByLibrary.simpleMessage("Outstanding"),
         "party": MessageLookupByLibrary.simpleMessage("Party 🎉"),
-        "present": MessageLookupByLibrary.simpleMessage("Present"),
         "presentationsInFlutter": MessageLookupByLibrary.simpleMessage(
             "Presentations made easy in Flutter"),
         "repoLink": MessageLookupByLibrary.simpleMessage(
             "https://github.com/lucas-goldner/FlutterShow"),
-        "test": MessageLookupByLibrary.simpleMessage("Test"),
+        "sideWidget": MessageLookupByLibrary.simpleMessage("Side Widget"),
         "thanks": MessageLookupByLibrary.simpleMessage("Thanks!")
       };
 }

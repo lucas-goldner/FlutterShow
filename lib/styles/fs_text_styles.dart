@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_show/generated/fonts.gen.dart';
+import 'package:flutter_show/presentation/config/contants.dart';
 
 class FSTextStyles {
   static TextStyle title({Color? color, double? fontSize}) => TextStyle(
         fontSize: fontSize ?? 96,
         fontWeight: FontWeight.w600,
-        fontFamily: FontFamily.graphik,
+        fontFamily: AppConstants.fontGraphik,
         color: color ?? CupertinoColors.black,
       );
 
@@ -17,7 +17,7 @@ class FSTextStyles {
       TextStyle(
         fontSize: fontSize ?? 52,
         fontWeight: fontWeight ?? FontWeight.w500,
-        fontFamily: FontFamily.graphik,
+        fontFamily: AppConstants.fontGraphik,
         color: color ?? const Color(0xFF121826),
       );
 
@@ -29,7 +29,7 @@ class FSTextStyles {
       TextStyle(
         fontSize: fontSize ?? 24,
         fontWeight: fontWeight ?? FontWeight.w500,
-        fontFamily: FontFamily.graphik,
+        fontFamily: AppConstants.fontGraphik,
         color: color ?? const Color(0xFF121826),
       );
 }

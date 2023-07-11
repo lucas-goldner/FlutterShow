@@ -44,7 +44,7 @@ class DownsidesSlide extends HookConsumerWidget {
                 ],
                 currentIndex: index,
                 textAlign: TextAlign.start,
-                dotted: true,
+                bullet: ListBullets.circle_outline,
                 padding: const EdgeInsets.symmetric(vertical: 8),
               ),
             ),

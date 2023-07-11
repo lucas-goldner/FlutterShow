@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
+import 'package:fluttershow_base/components/model/enum/list_bullets.dart';
 import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -45,7 +46,7 @@ class BenefitsSlide extends HookConsumerWidget {
                 ],
                 currentIndex: index,
                 textAlign: TextAlign.start,
-                dotted: true,
+                bullet: ListBullets.circle_big,
                 padding: const EdgeInsets.symmetric(vertical: 8),
               ),
             ),

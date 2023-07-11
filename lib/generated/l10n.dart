@@ -90,46 +90,6 @@ class S {
     );
   }
 
-  /// `Design`
-  String get design {
-    return Intl.message(
-      'Design',
-      name: 'design',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Code`
-  String get code {
-    return Intl.message(
-      'Code',
-      name: 'code',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Test`
-  String get test {
-    return Intl.message(
-      'Test',
-      name: 'test',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Present`
-  String get present {
-    return Intl.message(
-      'Present',
-      name: 'present',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Party 🎉`
   String get party {
     return Intl.message(
@@ -275,6 +235,16 @@ class S {
     return Intl.message(
       'https://github.com/lucas-goldner/FlutterShow',
       name: 'repoLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Side Widget`
+  String get sideWidget {
+    return Intl.message(
+      'Side Widget',
+      name: 'sideWidget',
       desc: '',
       args: [],
     );
