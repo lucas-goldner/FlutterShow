@@ -120,6 +120,16 @@ class S {
     );
   }
 
+  /// `Really bad`
+  String get reallyBad {
+    return Intl.message(
+      'Really bad',
+      name: 'reallyBad',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Annoying`
   String get annoying {
     return Intl.message(

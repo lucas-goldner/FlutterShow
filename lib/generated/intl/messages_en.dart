@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "party": MessageLookupByLibrary.simpleMessage("Party 🎉"),
         "presentationsInFlutter": MessageLookupByLibrary.simpleMessage(
             "Presentations made easy in Flutter"),
+        "reallyBad": MessageLookupByLibrary.simpleMessage("Really bad"),
         "repoLink": MessageLookupByLibrary.simpleMessage(
             "https://github.com/lucas-goldner/FlutterShow"),
         "sideWidget": MessageLookupByLibrary.simpleMessage("Side Widget"),

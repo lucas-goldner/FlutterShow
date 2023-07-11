@@ -3,7 +3,7 @@ import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/slides/01_title/widgets/title_slide_overlay.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
-import 'package:fluttershow_keynote/fluttershow_keynote.dart';
+import 'package:fluttershow_keynote/slides/title_slide/keynote_title_slide.dart';
 
 class TitleSlide extends StatelessWidget {
   const TitleSlide({super.key});
