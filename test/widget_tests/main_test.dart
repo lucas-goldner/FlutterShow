@@ -13,7 +13,7 @@ void main() {
         home: Builder(
           builder: (context) {
             buildContext = context;
-            return const MyPresentation();
+            return const MyFluttershow();
           },
         ),
         debugShowCheckedModeBanner: false,
@@ -30,7 +30,7 @@ void main() {
   testWidgets('test render main test', (tester) async {
     await tester.pumpWidget(ProviderScope(child: makeTestableWidget()));
     await tester.pump(const Duration(seconds: 1));
-    expect(find.byType(MyPresentation), findsOneWidget);
+    expect(find.byType(MyFluttershow), findsOneWidget);
     expect(
       find.text(S.of(buildContext).flutterShow),
       findsOneWidget,

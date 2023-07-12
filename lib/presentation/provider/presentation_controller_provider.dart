@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_show/presentation/config/key_actions.dart';
@@ -7,7 +8,15 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PresentationController extends StateNotifier<Presentation> {
   PresentationController()
-      : super(Presentation(0, 0, const Locale('en'), PageController()));
+      : super(
+          Presentation(
+            0,
+            0,
+            const Locale('en'),
+            PlatformDispatcher.instance.platformBrightness,
+            PageController(),
+          ),
+        );
 
   KeyEventResult handleKeyEvents(
     RawKeyEvent event,
@@ -79,6 +88,12 @@ class PresentationController extends StateNotifier<Presentation> {
         curve: Curves.ease,
       );
     }
+  }
+
+  void setBrightness(Brightness brightness) {
+    state = state.copyWith(
+      brightness: brightness,
+    );
   }
 }
 

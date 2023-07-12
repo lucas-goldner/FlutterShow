@@ -5,7 +5,7 @@ import 'package:flutter_show/main.dart';
 
 Widget makeDefaultTestableWidget(Widget? widget) => CupertinoApp(
       key: const Key('MainApp'),
-      home: widget ?? const MyPresentation(),
+      home: widget ?? const MyFluttershow(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         S.delegate,

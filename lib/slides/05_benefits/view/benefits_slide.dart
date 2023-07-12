@@ -15,7 +15,7 @@ class BenefitsSlide extends HookConsumerWidget {
 
     return DecoratedBox(
       decoration: const BoxDecoration(
-        gradient: FSGradients.backgroundPrimary,
+        gradient: FSGradients.background,
       ),
       child: KeynoteTitleAndBulletsSlideVariants.variantOne(
         titleText: t.benefits,

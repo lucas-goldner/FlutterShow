@@ -16,7 +16,7 @@ class AgendaSlide extends HookConsumerWidget {
     return FadeAnimation(
       DecoratedBox(
         decoration: const BoxDecoration(
-          gradient: FSGradients.backgroundPrimary,
+          gradient: FSGradients.background,
         ),
         child: KeynoteTitleAndPhotoAltSlideVariations.variantOne(
           image: Image.asset(

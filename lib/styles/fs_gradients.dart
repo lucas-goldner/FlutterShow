@@ -12,33 +12,26 @@ class FSGradients {
     ],
   );
 
-  static const LinearGradient backgroundPrimary = LinearGradient(
+  static const LinearGradient background = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
     colors: [
       CupertinoColors.systemBackground,
-      Color.fromARGB(255, 205, 220, 246),
+      Color(0xFFCDDCF6),
     ],
     stops: [0.5, 1.0],
   );
 
-  static const LinearGradient downsidesGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
+  static const LinearGradient backgroundDark = LinearGradient(
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
     colors: [
-      Color.fromARGB(255, 75, 41, 41),
-      Color.fromARGB(255, 180, 37, 37),
+      Color(0xFF020202),
+      Color(0xFF333333),
     ],
-    stops: [0.05, 0.3],
+    stops: [0.1, 1.0],
   );
 
-  static const LinearGradient benefitsGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [
-      Color.fromARGB(255, 6, 100, 40),
-      Color.fromARGB(255, 18, 196, 83),
-    ],
-    stops: [0.05, 0.3],
-  );
+  static LinearGradient dynamicBackground(Brightness brightness) =>
+      brightness == Brightness.dark ? backgroundDark : background;
 }

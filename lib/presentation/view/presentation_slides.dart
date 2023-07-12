@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
-
+import 'package:flutter_show/presentation/widgets/menu.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PresentationSlides extends HookConsumerWidget {
@@ -41,14 +41,19 @@ class PresentationSlides extends HookConsumerWidget {
       child: GestureDetector(
         onTap: onSlidePress,
         onSecondaryTap: onSecondaryTap,
-        child: CupertinoPageScaffold(
-          backgroundColor: Colors.white,
-          child: PageView.builder(
-            itemCount: PagesOfPresentation.values.length,
-            controller: pageController,
-            itemBuilder: (context, index) =>
-                PagesOfPresentation.values[index].slide,
-          ),
+        child: Stack(
+          children: [
+            CupertinoPageScaffold(
+              backgroundColor: Colors.white,
+              child: PageView.builder(
+                itemCount: PagesOfPresentation.values.length,
+                controller: pageController,
+                itemBuilder: (context, index) =>
+                    PagesOfPresentation.values[index].slide,
+              ),
+            ),
+            const Menu(),
+          ],
         ),
       ),
     );

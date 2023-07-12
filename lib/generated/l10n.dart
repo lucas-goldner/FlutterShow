@@ -299,6 +299,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Menu`
+  String get menu {
+    return Intl.message(
+      'Menu',
+      name: 'menu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Darkmode`
+  String get darkMode {
+    return Intl.message(
+      'Darkmode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -10,7 +10,7 @@ class OutroSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) => DecoratedBox(
         decoration: const BoxDecoration(
-          gradient: FSGradients.backgroundPrimary,
+          gradient: FSGradients.background,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

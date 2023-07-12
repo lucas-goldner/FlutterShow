@@ -15,7 +15,7 @@ class DownsidesSlide extends HookConsumerWidget {
 
     return DecoratedBox(
       decoration: const BoxDecoration(
-        gradient: FSGradients.backgroundPrimary,
+        gradient: FSGradients.background,
       ),
       child: KeynoteTitleAndBulletsSlideVariants.variantTwo(
         titleText: t.downsides,

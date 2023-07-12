@@ -6,7 +6,7 @@ class FSTextStyles {
         fontSize: fontSize ?? 96,
         fontWeight: FontWeight.w600,
         fontFamily: AppConstants.fontGraphik,
-        color: color ?? CupertinoColors.black,
+        color: color,
       );
 
   static TextStyle regularText({
@@ -18,7 +18,7 @@ class FSTextStyles {
         fontSize: fontSize ?? 52,
         fontWeight: fontWeight ?? FontWeight.w500,
         fontFamily: AppConstants.fontGraphik,
-        color: color ?? const Color(0xFF121826),
+        color: color,
       );
 
   static TextStyle footerText({
@@ -30,6 +30,6 @@ class FSTextStyles {
         fontSize: fontSize ?? 24,
         fontWeight: fontWeight ?? FontWeight.w500,
         fontFamily: AppConstants.fontGraphik,
-        color: color ?? const Color(0xFF121826),
+        color: color,
       );
 }
