@@ -5,7 +5,7 @@ import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:fluttershow_keynote/slides/title_and_bullets/keynote_title_and_bullets_slide_variants.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class BenefitsSlide extends HookConsumerWidget {
+class BenefitsSlide extends ConsumerWidget {
   const BenefitsSlide({super.key});
 
   @override

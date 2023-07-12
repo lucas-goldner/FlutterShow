@@ -5,7 +5,7 @@ import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:fluttershow_keynote/slides/title_and_photo_alt/keynote_title_and_photo_alt_slide_variations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class AgendaSlide extends HookConsumerWidget {
+class AgendaSlide extends ConsumerWidget {
   const AgendaSlide({super.key});
 
   @override
