@@ -21,7 +21,7 @@ class BenefitsSlide extends ConsumerWidget {
         titleText: t.benefits,
         subTitleText: t.great,
         bulletPoints: [t.awesome, t.amazing, t.outstanding, t.madeWithFlutter],
-        currentIndex: index,
+        animationIndex: index,
       ),
     );
   }

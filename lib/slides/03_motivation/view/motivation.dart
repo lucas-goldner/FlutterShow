@@ -20,7 +20,10 @@ class MotivationSlide extends ConsumerWidget {
     final brightness = provider.brightness;
 
     return DirectionalAnimation(
-      DecoratedBox(
+      delay: 100,
+      animation: PageDirectionalAnimations.bottom,
+      curve: Curves.easeInSine,
+      child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: FSGradients.dynamicBackground(brightness),
         ),
@@ -49,7 +52,7 @@ class MotivationSlide extends ConsumerWidget {
                             child: Transform.rotate(
                               angle: -math.pi / 14.0,
                               child: const Arrow(
-                                'Next',
+                                text: 'Next',
                                 size: Size(100, 100),
                               ),
                             ),
@@ -92,9 +95,6 @@ class MotivationSlide extends ConsumerWidget {
           ),
         ),
       ),
-      100,
-      PageDirectionalAnimations.bottom,
-      curve: Curves.easeInSine,
     );
   }
 }

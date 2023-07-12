@@ -21,7 +21,7 @@ class DownsidesSlide extends ConsumerWidget {
         titleText: t.downsides,
         subTitleText: t.reallyBad,
         bulletPoints: [t.annoying, t.boring, t.lazy, t.notFlutter],
-        currentIndex: index,
+        animationIndex: index,
       ),
     );
   }

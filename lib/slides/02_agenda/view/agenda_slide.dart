@@ -14,7 +14,8 @@ class AgendaSlide extends ConsumerWidget {
     final size = MediaQuery.sizeOf(context);
 
     return FadeAnimation(
-      DecoratedBox(
+      delay: 100,
+      child: DecoratedBox(
         decoration: const BoxDecoration(
           gradient: FSGradients.background,
         ),
@@ -29,7 +30,6 @@ class AgendaSlide extends ConsumerWidget {
           subtitle: t.party,
         ),
       ),
-      100,
     );
   }
 }
