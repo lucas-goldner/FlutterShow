@@ -3,7 +3,7 @@ import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/slides/01_title/widgets/title_slide_overlay.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
-import 'package:fluttershow_keynote/slides/title_slide/keynote_title_slide.dart';
+import 'package:fluttershow_keynote/fluttershow_keynote.dart';
 
 class TitleSlide extends StatelessWidget {
   const TitleSlide({super.key});
@@ -22,7 +22,7 @@ class TitleSlide extends StatelessWidget {
             titleText: t.flutterShow,
             subTitleText: t.presentationsInFlutter,
             footerText: t.author,
-            titleGradient: FSGradients.animatedTitlePrimary,
+            titleGradient: FSGradients.titlePrimary,
             titleStyle: FSTextStyles.title(),
             subtitleStyle: FSTextStyles.regularText(),
             footerStyle: FSTextStyles.footerText(),
