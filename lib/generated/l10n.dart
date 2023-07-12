@@ -259,6 +259,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Step One`
+  String get step1 {
+    return Intl.message(
+      'Step One',
+      name: 'step1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Step Two`
+  String get step2 {
+    return Intl.message(
+      'Step Two',
+      name: 'step2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Step Two closer look`
+  String get step2close {
+    return Intl.message(
+      'Step Two closer look',
+      name: 'step2close',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Step Three`
+  String get step3 {
+    return Intl.message(
+      'Step Three',
+      name: 'step3',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

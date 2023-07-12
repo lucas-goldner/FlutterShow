@@ -19,5 +19,9 @@
   "madeWithFlutter": "Made with Flutter💙",
   "thanks": "Thanks!",
   "repoLink": "https://github.com/lucas-goldner/FlutterShow",
-  "sideWidget": "Side Widget"
+  "sideWidget": "Side Widget",
+  "step1": "Step One",
+  "step2": "Step Two",
+  "step2close": "Step Two closer look",
+  "step3": "Step Three"
 }

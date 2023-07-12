@@ -18,8 +18,8 @@ class OutroSlide extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/images/custom/qr.svg',
+                Image.asset(
+                  'assets/images/custom/qr.png',
                   height: 400,
                   width: 400,
                 ),

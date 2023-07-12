@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
-import 'package:fluttershow_base/components/model/enum/list_bullets.dart';
-import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
+import 'package:fluttershow_keynote/slides/title_and_bullets/keynote_title_and_bullets_slide_variants.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class BenefitsSlide extends HookConsumerWidget {
@@ -18,40 +17,11 @@ class BenefitsSlide extends HookConsumerWidget {
       decoration: const BoxDecoration(
         gradient: FSGradients.backgroundPrimary,
       ),
-      child: Column(
-        children: [
-          LayoutHeader(
-            Row(
-              children: [
-                const SizedBox(
-                  width: 80,
-                ),
-                GradientText(
-                  t.benefits,
-                  gradient: FSGradients.benefitsGradient,
-                ),
-              ],
-            ),
-          ),
-          LayoutBody(
-            Padding(
-              padding: const EdgeInsets.only(left: 80),
-              child: AnimatableListText(
-                texts: [
-                  t.great,
-                  t.awesome,
-                  t.outstanding,
-                  t.amazing,
-                  t.madeWithFlutter,
-                ],
-                currentIndex: index,
-                textAlign: TextAlign.start,
-                bullet: ListBullets.circle_big,
-                padding: const EdgeInsets.symmetric(vertical: 8),
-              ),
-            ),
-          )
-        ],
+      child: KeynoteTitleAndBulletsSlideVariants.variantOne(
+        titleText: t.benefits,
+        subTitleText: t.great,
+        bulletPoints: [t.awesome, t.amazing, t.outstanding, t.madeWithFlutter],
+        currentIndex: index,
       ),
     );
   }
