@@ -10,11 +10,12 @@ class PresentationController extends StateNotifier<Presentation> {
   PresentationController()
       : super(
           Presentation(
-            0,
-            0,
-            const Locale('en'),
-            PlatformDispatcher.instance.platformBrightness,
-            PageController(),
+            itemIndex: 0,
+            page: 0,
+            locale: const Locale('en'),
+            menuOpen: false,
+            brightness: PlatformDispatcher.instance.platformBrightness,
+            pageController: PageController(),
           ),
         );
 
@@ -33,6 +34,13 @@ class PresentationController extends StateNotifier<Presentation> {
       if (KeyActions.goNextSlide.keybindings
           .any((key) => key == event.physicalKey)) {
         goToNextItem();
+        keyPressed.value = true;
+        return KeyEventResult.handled;
+      }
+
+      if (KeyActions.openMenu.keybindings
+          .any((key) => key == event.physicalKey)) {
+        toggleMenu();
         keyPressed.value = true;
         return KeyEventResult.handled;
       }
@@ -90,11 +98,22 @@ class PresentationController extends StateNotifier<Presentation> {
     }
   }
 
+  void switchToPage(int index) {
+    state = state.copyWith(page: index, itemIndex: 0);
+    state.pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.ease,
+    );
+  }
+
   void setBrightness(Brightness brightness) {
     state = state.copyWith(
       brightness: brightness,
     );
   }
+
+  void toggleMenu() => state = state.copyWith(menuOpen: !state.menuOpen);
 }
 
 final presentationController =

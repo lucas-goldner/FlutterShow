@@ -10,6 +10,10 @@ enum KeyActions {
     PhysicalKeyboardKey.keyD,
     PhysicalKeyboardKey.arrowRight,
     PhysicalKeyboardKey.arrowUp
+  ]),
+  openMenu([
+    PhysicalKeyboardKey.keyM,
+    PhysicalKeyboardKey.escape,
   ]);
 
   const KeyActions(this.keybindings);

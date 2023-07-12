@@ -2,32 +2,36 @@ import 'package:flutter/material.dart';
 
 @immutable
 class Presentation {
-  const Presentation(
-    this.itemIndex,
-    this.page,
-    this.locale,
-    this.brightness,
-    this.pageController,
-  );
+  const Presentation({
+    required this.itemIndex,
+    required this.page,
+    required this.locale,
+    required this.brightness,
+    required this.menuOpen,
+    required this.pageController,
+  });
 
   final int itemIndex;
   final int page;
   final Locale locale;
   final Brightness brightness;
+  final bool menuOpen;
   final PageController pageController;
 
   Presentation copyWith({
     int? itemIndex,
     int? page,
     Locale? locale,
+    bool? menuOpen,
     Brightness? brightness,
   }) {
     return Presentation(
-      itemIndex ?? this.itemIndex,
-      page ?? this.page,
-      locale ?? this.locale,
-      brightness ?? this.brightness,
-      pageController,
+      itemIndex: itemIndex ?? this.itemIndex,
+      page: page ?? this.page,
+      locale: locale ?? this.locale,
+      brightness: brightness ?? this.brightness,
+      menuOpen: menuOpen ?? this.menuOpen,
+      pageController: pageController,
     );
   }
 }

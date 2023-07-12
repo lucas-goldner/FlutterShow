@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/widgets/menu_option.dart';
+import 'package:flutter_show/styles/fs_style_constants.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
 import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -19,6 +20,9 @@ class Menu extends HookConsumerWidget {
         .watch(presentationController.notifier)
         .setBrightness(value ? Brightness.light : Brightness.dark);
 
+    void toggleMenu() =>
+        ref.watch(presentationController.notifier).toggleMenu();
+
     return Align(
       alignment: Alignment.bottomCenter,
       child: DecoratedBox(
@@ -27,24 +31,30 @@ class Menu extends HookConsumerWidget {
         ),
         child: SizedBox(
           width: size.width,
-          height: size.height / 4,
+          height: FSStyleConstants.getMenuHeight(size),
           child: Padding(
             padding: allPadding16,
-            child: Row(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Row(
                   children: [
                     Text(
                       t.menu,
                       style: FSTextStyles.footerText(),
                     ),
-                    MenuOption(
-                      description: t.darkMode,
-                      value: presentation.brightness != Brightness.dark,
-                      callback: switchTheme,
-                    ),
+                    const Spacer(),
+                    CupertinoButton.filled(
+                      padding: allPadding12,
+                      onPressed: toggleMenu,
+                      child: const Text('Close'),
+                    )
                   ],
+                ),
+                MenuOption(
+                  description: t.darkMode,
+                  value: presentation.brightness != Brightness.dark,
+                  callback: switchTheme,
                 ),
               ],
             ),

@@ -4,6 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/widgets/menu.dart';
+import 'package:flutter_show/styles/fs_style_constants.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PresentationSlides extends HookConsumerWidget {
@@ -11,9 +12,12 @@ class PresentationSlides extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final pageController = ref.watch(presentationController).pageController;
+    final provider = ref.watch(presentationController);
+    final pageController = provider.pageController;
+    final menuOpen = provider.menuOpen;
     final focusNode = FocusNode();
     final keyPressed = useState(false);
+    final size = MediaQuery.sizeOf(context);
 
     void toNextItem() => ref
         .read<PresentationController>(presentationController.notifier)
@@ -52,7 +56,12 @@ class PresentationSlides extends HookConsumerWidget {
                     PagesOfPresentation.values[index].slide,
               ),
             ),
-            const Menu(),
+            AnimatedPositioned(
+              bottom: menuOpen ? 0 : -FSStyleConstants.getMenuHeight(size),
+              curve: Curves.easeInOut,
+              duration: const Duration(milliseconds: 500),
+              child: const Menu(),
+            )
           ],
         ),
       ),
