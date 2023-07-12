@@ -18,12 +18,7 @@ class MotivationSlide extends HookConsumerWidget {
 
     return DirectionalAnimation(
       KeynoteBlankSlide(
-        headerWidget: Column(
-          children: [
-            const Spacer(),
-            Text(t.motiviation, style: FSTextStyles.title()),
-          ],
-        ),
+        headerWidget: Text(t.motiviation, style: FSTextStyles.title()),
         headerFlexUnits: 1,
         bodyWidget: Row(
           mainAxisAlignment: MainAxisAlignment.center,
