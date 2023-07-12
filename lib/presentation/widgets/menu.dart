@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/widgets/menu_option.dart';
+import 'package:flutter_show/presentation/widgets/slide_show.dart';
 import 'package:flutter_show/styles/fs_style_constants.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
 import 'package:fluttershow_base/fluttershow_base.dart';
@@ -51,11 +52,20 @@ class Menu extends HookConsumerWidget {
                     )
                   ],
                 ),
-                MenuOption(
-                  description: t.darkMode,
-                  value: presentation.brightness != Brightness.dark,
-                  callback: switchTheme,
-                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        MenuOption(
+                          description: t.darkMode,
+                          value: presentation.brightness != Brightness.dark,
+                          callback: switchTheme,
+                        ),
+                      ],
+                    ),
+                    const Flexible(child: SlideShow()),
+                  ],
+                )
               ],
             ),
           ),

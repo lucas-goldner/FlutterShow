@@ -7,15 +7,42 @@ import 'package:flutter_show/slides/05_benefits/view/benefits_slide.dart';
 import 'package:flutter_show/slides/06_outro/view/outo_slide.dart';
 
 enum PagesOfPresentation {
-  titleSlide(TitleSlide(), 1),
-  agendaSlide(AgendaSlide(), 1),
-  motivation(MotivationSlide(), 4),
-  downsides(DownsidesSlide(), 4),
-  benefits(BenefitsSlide(), 5),
-  outro(OutroSlide(), 1);
+  titleSlide(
+    slide: TitleSlide(),
+    items: 1,
+    title: 'Title',
+  ),
+  agendaSlide(
+    slide: AgendaSlide(),
+    items: 1,
+    title: 'Agenda',
+  ),
+  motivation(
+    slide: MotivationSlide(),
+    items: 4,
+  ),
+  downsides(
+    slide: DownsidesSlide(),
+    items: 4,
+    title: 'Downsidessssss',
+  ),
+  benefits(
+    slide: BenefitsSlide(),
+    items: 5,
+  ),
+  outro(
+    slide: OutroSlide(),
+    items: 1,
+    title: 'Fin',
+  );
 
-  const PagesOfPresentation(this.slide, this.items);
+  const PagesOfPresentation({
+    required this.slide,
+    required this.items,
+    this.title,
+  });
 
   final Widget slide;
   final int items;
+  final String? title;
 }

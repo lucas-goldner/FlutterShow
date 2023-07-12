@@ -13,7 +13,6 @@ enum KeyActions {
   ]),
   openMenu([
     PhysicalKeyboardKey.keyM,
-    PhysicalKeyboardKey.escape,
   ]);
 
   const KeyActions(this.keybindings);
