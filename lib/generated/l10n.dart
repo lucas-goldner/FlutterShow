@@ -50,6 +50,36 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Menu`
+  String get menu {
+    return Intl.message(
+      'Menu',
+      name: 'menu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Darkmode`
+  String get darkMode {
+    return Intl.message(
+      'Darkmode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Slides`
+  String get slides {
+    return Intl.message(
+      'Slides',
+      name: 'slides',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `FlutterShow`
   String get flutterShow {
     return Intl.message(
@@ -295,26 +325,6 @@ class S {
     return Intl.message(
       'Step Three',
       name: 'step3',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Menu`
-  String get menu {
-    return Intl.message(
-      'Menu',
-      name: 'menu',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Darkmode`
-  String get darkMode {
-    return Intl.message(
-      'Darkmode',
-      name: 'darkMode',
       desc: '',
       args: [],
     );

@@ -1,4 +1,7 @@
 {
+  "menu": "Menu",
+  "darkMode": "Darkmode",
+  "slides": "Slides",
   "flutterShow": "FlutterShow",
   "presentationsInFlutter": "Presentations made easy in Flutter",
   "author": "Made by Lucas Goldner",
@@ -23,7 +26,5 @@
   "step1": "Step One",
   "step2": "Step Two",
   "step2close": "Step Two closer look",
-  "step3": "Step Three",
-  "menu": "Menu",
-  "darkMode": "Darkmode"
+  "step3": "Step Three"
 }

@@ -28,6 +28,10 @@ class Menu extends HookConsumerWidget {
       alignment: Alignment.bottomCenter,
       child: DecoratedBox(
         decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(8),
+            topRight: Radius.circular(8),
+          ),
           color: CupertinoColors.black.withOpacity(0.5),
         ),
         child: SizedBox(
@@ -39,33 +43,42 @@ class Menu extends HookConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  children: [
-                    Text(
-                      t.menu,
-                      style: FSTextStyles.footerText(),
-                    ),
-                    const Spacer(),
-                    CupertinoButton.filled(
-                      padding: allPadding12,
-                      onPressed: toggleMenu,
-                      child: const Text('Close'),
-                    )
-                  ],
-                ),
-                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Text(
+                          t.menu,
+                          style: FSTextStyles.footerText(),
+                        ),
                         MenuOption(
                           description: t.darkMode,
                           value: presentation.brightness != Brightness.dark,
                           callback: switchTheme,
                         ),
+                        verticalMargin8,
+                        CupertinoButton.filled(
+                          onPressed: toggleMenu,
+                          child: const Text('Close'),
+                        )
                       ],
                     ),
-                    const Flexible(child: SlideShow()),
+                    horizontalMargin12,
+                    Flexible(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            t.slides,
+                            style: FSTextStyles.footerText(),
+                          ),
+                          const SlideShow(),
+                        ],
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           ),
