@@ -10,7 +10,7 @@ class PresentationController extends StateNotifier<Presentation> {
   PresentationController()
       : super(
           Presentation(
-            itemIndex: 0,
+            animationIndex: 0,
             page: 0,
             locale: const Locale('en'),
             menuOpen: false,
@@ -53,19 +53,19 @@ class PresentationController extends StateNotifier<Presentation> {
   }
 
   void goToNextItem() {
-    state = state.copyWith(itemIndex: state.itemIndex + 1);
+    state = state.copyWith(itemIndex: state.animationIndex + 1);
 
-    if (state.itemIndex >=
+    if (state.animationIndex >=
         PagesOfPresentation.values.toList()[state.page].items) {
       nextPage();
     }
   }
 
   void gotoLastItem() {
-    if (state.itemIndex == 0) {
+    if (state.animationIndex == 0) {
       toLastPage();
     } else {
-      state = state.copyWith(itemIndex: state.itemIndex - 1);
+      state = state.copyWith(itemIndex: state.animationIndex - 1);
     }
   }
 
@@ -105,10 +105,6 @@ class PresentationController extends StateNotifier<Presentation> {
       duration: const Duration(milliseconds: 500),
       curve: Curves.ease,
     );
-  }
-
-  void updateCurrentPage(int index) {
-    state = state.copyWith(page: index, itemIndex: 0);
   }
 
   void setBrightness(Brightness brightness) {

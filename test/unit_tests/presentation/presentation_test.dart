@@ -36,7 +36,7 @@ void main() {
 
     expect(
       2,
-      pre.copyWith(itemIndex: 2).itemIndex,
+      pre.copyWith(itemIndex: 2).animationIndex,
     );
   });
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 @immutable
 class Presentation {
   const Presentation({
-    required this.itemIndex,
+    required this.animationIndex,
     required this.page,
     required this.locale,
     required this.brightness,
@@ -11,7 +11,7 @@ class Presentation {
     required this.pageController,
   });
 
-  final int itemIndex;
+  final int animationIndex;
   final int page;
   final Locale locale;
   final Brightness brightness;
@@ -26,7 +26,7 @@ class Presentation {
     Brightness? brightness,
   }) {
     return Presentation(
-      itemIndex: itemIndex ?? this.itemIndex,
+      animationIndex: itemIndex ?? animationIndex,
       page: page ?? this.page,
       locale: locale ?? this.locale,
       brightness: brightness ?? this.brightness,

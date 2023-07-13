@@ -16,7 +16,7 @@ class MotivationSlide extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final t = S.of(context);
     final provider = ref.watch(presentationController);
-    final index = provider.itemIndex;
+    final index = provider.animationIndex;
     final brightness = provider.brightness;
 
     return DirectionalAnimation(

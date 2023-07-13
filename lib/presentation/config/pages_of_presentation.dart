@@ -23,12 +23,12 @@ enum PagesOfPresentation {
   ),
   downsides(
     slide: DownsidesSlide(),
-    items: 4,
+    items: 6,
     title: 'Downsidessssss',
   ),
   benefits(
     slide: BenefitsSlide(),
-    items: 5,
+    items: 6,
   ),
   outro(
     slide: OutroSlide(),

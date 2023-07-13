@@ -10,7 +10,7 @@ class DownsidesSlide extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final index = ref.watch(presentationController).itemIndex;
+    final index = ref.watch(presentationController).animationIndex;
     final t = S.of(context);
 
     return DecoratedBox(
