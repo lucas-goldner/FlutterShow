@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
-import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
+import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SlideShow extends ConsumerWidget {

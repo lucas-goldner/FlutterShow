@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
-import 'package:fluttershow_base/fluttershow_base.dart';
+import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
 import 'package:fluttershow_keynote/slides/title_and_photo_alt/keynote_title_and_photo_alt_slide_variations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 

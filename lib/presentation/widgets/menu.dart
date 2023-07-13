@@ -5,7 +5,8 @@ import 'package:flutter_show/presentation/widgets/menu_option.dart';
 import 'package:flutter_show/presentation/widgets/slide_show.dart';
 import 'package:flutter_show/styles/fs_style_constants.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
-import 'package:fluttershow_base/fluttershow_base.dart';
+import 'package:fluttershow_base/components/widgets/spacing/margins.dart';
+import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Menu extends HookConsumerWidget {

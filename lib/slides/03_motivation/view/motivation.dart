@@ -1,11 +1,11 @@
 import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
-import 'package:fluttershow_base/fluttershow_base.dart';
+import 'package:fluttershow_base/components/model/enum/directional_animation_direction.dart';
+import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
 import 'package:fluttershow_keynote/slides/blank/keynote_blank_slide.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -21,7 +21,7 @@ class MotivationSlide extends ConsumerWidget {
 
     return DirectionalAnimation(
       delay: 100,
-      direction: PageDirectionalAnimations.bottom,
+      direction: DirectionalAnimationDirection.bottom,
       curve: Curves.easeInExpo,
       child: DecoratedBox(
         decoration: BoxDecoration(
