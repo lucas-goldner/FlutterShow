@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
@@ -12,9 +11,7 @@ class PresentationSlides extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final provider = ref.watch(presentationController);
-    final pageController = provider.pageController;
-    final menuOpen = provider.menuOpen;
+    final controller = ref.watch(presentationController);
     final focusNode = FocusNode();
     final keyPressed = useState(false);
     final size = MediaQuery.sizeOf(context);
@@ -48,17 +45,18 @@ class PresentationSlides extends HookConsumerWidget {
         child: Stack(
           children: [
             CupertinoPageScaffold(
-              backgroundColor: Colors.white,
               child: PageView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: PagesOfPresentation.values.length,
-                controller: pageController,
+                controller: controller.pageController,
                 itemBuilder: (context, index) =>
                     PagesOfPresentation.values[index].slide,
               ),
             ),
             AnimatedPositioned(
-              bottom: menuOpen ? 0 : -FSStyleConstants.getMenuHeight(size),
+              bottom: controller.menuOpen
+                  ? 0
+                  : -FSStyleConstants.getMenuHeight(size),
               curve: Curves.easeInOut,
               duration: const Duration(milliseconds: 500),
               child: const Menu(),

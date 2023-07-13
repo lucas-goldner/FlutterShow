@@ -13,11 +13,11 @@ class TitleSlide extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final t = S.of(context);
-    final brightness = ref.watch(presentationController).brightness;
+    final controller = ref.watch(presentationController);
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        gradient: FSGradients.dynamicBackground(brightness),
+        gradient: FSGradients.dynamicBackground(controller.brightness),
       ),
       child: Stack(
         children: [

@@ -15,9 +15,7 @@ class MotivationSlide extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final t = S.of(context);
-    final provider = ref.watch(presentationController);
-    final index = provider.animationIndex;
-    final brightness = provider.brightness;
+    final controller = ref.watch(presentationController);
 
     return DirectionalAnimation(
       delay: 100,
@@ -25,7 +23,7 @@ class MotivationSlide extends ConsumerWidget {
       curve: Curves.easeInExpo,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          gradient: FSGradients.dynamicBackground(brightness),
+          gradient: FSGradients.dynamicBackground(controller.brightness),
         ),
         child: KeynoteBlankSlide(
           headerWidget: Text(t.motiviation, style: FSTextStyles.title()),
@@ -34,16 +32,16 @@ class MotivationSlide extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Visibility(
-                visible: index == 2,
+                visible: controller.animationIndex == 2,
                 child: Text(t.step2close, style: FSTextStyles.regularText()),
               ),
               Visibility(
-                visible: index != 2,
+                visible: controller.animationIndex != 2,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Visibility(
-                      visible: index >= 0,
+                      visible: controller.animationIndex >= 0,
                       child: Row(
                         children: [
                           Text(t.step1, style: FSTextStyles.regularText()),
@@ -61,7 +59,7 @@ class MotivationSlide extends ConsumerWidget {
                       ),
                     ),
                     Visibility(
-                      visible: index >= 1,
+                      visible: controller.animationIndex >= 1,
                       child: Row(
                         children: [
                           Padding(
@@ -82,7 +80,7 @@ class MotivationSlide extends ConsumerWidget {
                       ),
                     ),
                     Visibility(
-                      visible: index >= 3,
+                      visible: controller.animationIndex >= 3,
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 60),
                         child: Text(t.step3, style: FSTextStyles.regularText()),

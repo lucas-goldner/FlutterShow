@@ -14,13 +14,13 @@ class Menu extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final presentation = ref.watch(presentationController);
+    final controller = ref.watch(presentationController);
     final size = MediaQuery.sizeOf(context);
     final t = S.of(context);
 
     void switchTheme({required bool value}) => ref
         .watch(presentationController.notifier)
-        .setBrightness(value ? Brightness.light : Brightness.dark);
+        .setBrightness(value ? Brightness.dark : Brightness.light);
 
     void toggleMenu() =>
         ref.watch(presentationController.notifier).toggleMenu();
@@ -55,7 +55,7 @@ class Menu extends HookConsumerWidget {
                         ),
                         MenuOption(
                           description: t.darkMode,
-                          value: presentation.brightness != Brightness.dark,
+                          value: controller.brightness == Brightness.dark,
                           callback: switchTheme,
                         ),
                         verticalMargin8,

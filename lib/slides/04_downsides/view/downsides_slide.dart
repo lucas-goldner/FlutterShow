@@ -10,18 +10,18 @@ class DownsidesSlide extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final index = ref.watch(presentationController).animationIndex;
+    final controller = ref.watch(presentationController);
     final t = S.of(context);
 
     return DecoratedBox(
-      decoration: const BoxDecoration(
-        gradient: FSGradients.background,
+      decoration: BoxDecoration(
+        gradient: FSGradients.dynamicBackground(controller.brightness),
       ),
       child: KeynoteTitleAndBulletsSlideVariants.variantTwo(
         titleText: t.downsides,
         subTitleText: t.reallyBad,
         bulletPoints: [t.annoying, t.boring, t.lazy, t.notFlutter],
-        animationIndex: index,
+        animationIndex: controller.animationIndex,
       ),
     );
   }
