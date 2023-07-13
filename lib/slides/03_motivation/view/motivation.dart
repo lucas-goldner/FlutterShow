@@ -21,8 +21,8 @@ class MotivationSlide extends ConsumerWidget {
 
     return DirectionalAnimation(
       delay: 100,
-      animation: PageDirectionalAnimations.bottom,
-      curve: Curves.easeInSine,
+      direction: PageDirectionalAnimations.bottom,
+      curve: Curves.easeInExpo,
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: FSGradients.dynamicBackground(brightness),

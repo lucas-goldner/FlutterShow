@@ -4,7 +4,7 @@ import 'package:flutter_show/presentation/provider/presentation_controller_provi
 import 'package:flutter_show/slides/01_title/widgets/title_slide_overlay.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
-import 'package:fluttershow_keynote/fluttershow_keynote.dart';
+import 'package:fluttershow_keynote/slides/title_slide/keynote_title_slide.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class TitleSlide extends HookConsumerWidget {

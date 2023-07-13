@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:fluttershow_base/components/widgets/spacings/margins.dart';
+import 'package:fluttershow_base/components/widgets/spacing/margins.dart';
 
 class MenuOption extends StatelessWidget {
   const MenuOption({

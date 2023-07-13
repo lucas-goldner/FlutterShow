@@ -39,6 +39,10 @@ class PresentationSlides extends HookConsumerWidget {
         .read<PresentationController>(presentationController.notifier)
         .toLastPage();
 
+    void updateCurrentSlide(int index) => ref
+        .read<PresentationController>(presentationController.notifier)
+        .updateCurrentPage(index);
+
     return RawKeyboardListener(
       focusNode: focusNode,
       onKey: handleKeyEvent,
@@ -50,6 +54,7 @@ class PresentationSlides extends HookConsumerWidget {
             CupertinoPageScaffold(
               backgroundColor: Colors.white,
               child: PageView.builder(
+                onPageChanged: updateCurrentSlide,
                 itemCount: PagesOfPresentation.values.length,
                 controller: pageController,
                 itemBuilder: (context, index) =>

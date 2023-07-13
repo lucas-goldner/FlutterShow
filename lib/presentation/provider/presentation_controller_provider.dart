@@ -107,6 +107,10 @@ class PresentationController extends StateNotifier<Presentation> {
     );
   }
 
+  void updateCurrentPage(int index) {
+    state = state.copyWith(page: index, itemIndex: 0);
+  }
+
   void setBrightness(Brightness brightness) {
     state = state.copyWith(
       brightness: brightness,
