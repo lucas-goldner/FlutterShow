@@ -50,7 +50,6 @@ class MotivationSlide extends ConsumerWidget {
                             child: Transform.rotate(
                               angle: -math.pi / 14.0,
                               child: const Arrow(
-                                text: 'Next',
                                 size: Size(100, 100),
                               ),
                             ),

@@ -29,7 +29,7 @@ class AgendaSlide extends ConsumerWidget {
             fit: BoxFit.cover,
           ),
           titleText: t.agenda,
-          subtitleText: t.party,
+          subTitleText: t.party,
         ),
       ),
     );
