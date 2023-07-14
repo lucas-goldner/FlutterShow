@@ -7,6 +7,8 @@ Unleash your creativity with presentations like never before! FlutterShow⚡️ 
 
 Check out the full documentation showcasing all slides here: 🚧Coming soon...🚧
 
+![Showcase](docs/images/showcase.png)
+
 ## General Information
 
 FlutterShow consists of two main packages: `fluttershow_base` and `fluttershow_keynote`:
