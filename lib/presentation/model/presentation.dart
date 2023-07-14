@@ -19,14 +19,14 @@ class Presentation {
   final PageController pageController;
 
   Presentation copyWith({
-    int? itemIndex,
+    int? animationIndex,
     int? page,
     Locale? locale,
     bool? menuOpen,
     Brightness? brightness,
   }) {
     return Presentation(
-      animationIndex: itemIndex ?? animationIndex,
+      animationIndex: animationIndex ?? this.animationIndex,
       page: page ?? this.page,
       locale: locale ?? this.locale,
       brightness: brightness ?? this.brightness,

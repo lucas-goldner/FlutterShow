@@ -26,7 +26,7 @@ class PresentationController extends StateNotifier<Presentation> {
     if (event is RawKeyDownEvent && !keyPressed.value) {
       if (KeyActions.goToLastSlide.keybindings
           .any((key) => key == event.physicalKey)) {
-        gotoLastItem();
+        goToLastItem();
         keyPressed.value = true;
         return KeyEventResult.handled;
       }
@@ -53,7 +53,7 @@ class PresentationController extends StateNotifier<Presentation> {
   }
 
   void goToNextItem() {
-    state = state.copyWith(itemIndex: state.animationIndex + 1);
+    state = state.copyWith(animationIndex: state.animationIndex + 1);
 
     if (state.animationIndex >=
         PagesOfPresentation.values.toList()[state.page].items) {
@@ -61,11 +61,11 @@ class PresentationController extends StateNotifier<Presentation> {
     }
   }
 
-  void gotoLastItem() {
+  void goToLastItem() {
     if (state.animationIndex == 0) {
       toLastPage();
     } else {
-      state = state.copyWith(itemIndex: state.animationIndex - 1);
+      state = state.copyWith(animationIndex: state.animationIndex - 1);
     }
   }
 
@@ -73,20 +73,20 @@ class PresentationController extends StateNotifier<Presentation> {
     if (state.page == PagesOfPresentation.values.length - 1) {
       state = state.copyWith(
         page: PagesOfPresentation.values.length - 1,
-        itemIndex: 0,
+        animationIndex: 0,
       );
     } else {
       state.pageController.nextPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
       );
-      state = state.copyWith(page: state.page + 1, itemIndex: 0);
+      state = state.copyWith(page: state.page + 1, animationIndex: 0);
     }
   }
 
   void toLastPage() {
     if (state.page == 0) {
-      state = state.copyWith(page: 0, itemIndex: 0);
+      state = state.copyWith(page: 0, animationIndex: 0);
     } else {
       state.pageController.previousPage(
         duration: const Duration(milliseconds: 500),
@@ -94,12 +94,12 @@ class PresentationController extends StateNotifier<Presentation> {
       );
       final itemsOnPage =
           PagesOfPresentation.values.toList()[state.page - 1].items;
-      state = state.copyWith(page: state.page - 1, itemIndex: itemsOnPage);
+      state = state.copyWith(page: state.page - 1, animationIndex: itemsOnPage);
     }
   }
 
   void switchToPage(int index) {
-    state = state.copyWith(page: index, itemIndex: 0);
+    state = state.copyWith(page: index, animationIndex: 0);
     state.pageController.animateToPage(
       index,
       duration: const Duration(milliseconds: 500),
@@ -107,11 +107,9 @@ class PresentationController extends StateNotifier<Presentation> {
     );
   }
 
-  void setBrightness(Brightness brightness) {
-    state = state.copyWith(
-      brightness: brightness,
-    );
-  }
+  void setBrightness(Brightness brightness) => state = state.copyWith(
+        brightness: brightness,
+      );
 
   void toggleMenu() => state = state.copyWith(menuOpen: !state.menuOpen);
 }

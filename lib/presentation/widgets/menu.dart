@@ -66,20 +66,18 @@ class Menu extends HookConsumerWidget {
                       ],
                     ),
                     horizontalMargin12,
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: horizontalPadding8,
-                            child: Text(
-                              t.slides,
-                              style: FSTextStyles.footerText(),
-                            ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: horizontalPadding8,
+                          child: Text(
+                            t.slides,
+                            style: FSTextStyles.footerText(),
                           ),
-                          const SlideShow(),
-                        ],
-                      ),
+                        ),
+                        const SlideShow(),
+                      ],
                     ),
                   ],
                 ),
