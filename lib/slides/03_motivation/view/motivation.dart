@@ -45,13 +45,10 @@ class MotivationSlide extends ConsumerWidget {
                       child: Row(
                         children: [
                           Text(t.step1, style: FSTextStyles.regularText()),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 240),
-                            child: Transform.rotate(
-                              angle: -math.pi / 14.0,
-                              child: const Arrow(
-                                size: Size(100, 100),
-                              ),
+                          Transform.rotate(
+                            angle: -math.pi / 14.0,
+                            child: const Arrow(
+                              size: Size(100, 100),
                             ),
                           ),
                         ],
@@ -62,14 +59,14 @@ class MotivationSlide extends ConsumerWidget {
                       child: Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(bottom: 100),
+                            padding: const EdgeInsets.only(bottom: 20),
                             child: Text(
                               t.step2,
                               style: FSTextStyles.regularText(),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(top: 280),
+                            padding: const EdgeInsets.only(top: 320),
                             child: Transform.rotate(
                               angle: -math.pi / 20.0,
                               child: const CurvyArrow(400, 160),
