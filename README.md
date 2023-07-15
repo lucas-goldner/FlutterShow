@@ -5,7 +5,7 @@
 
 Unleash your creativity with presentations like never before! FlutterShow⚡️ is an easy-to-use framework built in Flutter for crafting engaging and interactive presentations.
 
-Check out the full documentation showcasing all slides here: 🚧Coming soon...🚧
+Check out the full documentation showcasing all slides here: 🚧 Coming soon...🚧
 
 ![Showcase](docs/images/showcase.png)
 

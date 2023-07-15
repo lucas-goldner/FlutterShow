@@ -7,7 +7,7 @@ import 'package:flutter_show/styles/fs_text_styles.dart';
 import 'package:fluttershow_keynote/slides/title_slide/keynote_title_slide.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class TitleSlide extends HookConsumerWidget {
+class TitleSlide extends ConsumerWidget {
   const TitleSlide({super.key});
 
   @override
