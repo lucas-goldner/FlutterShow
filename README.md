@@ -22,7 +22,12 @@ Any more questions? Ask them in our discord: https://discord.gg/xC6wtbzZnP
 
 ## Project Setup
 
-When selecting a branch check out either `main` if you would like to use the latest stable version or go for the current release branch `release/1.1.0` if you want to have the newewst features.
+### Usage
+
+Feel free to either fork or clone the repo, whatever you prefer.
+When selecting a branch check out `main` if you would like to use the latest stable version or go for the current release branch `release/1.1.0` if you want to have the newewst features.
+
+### Running FlutterShow⚡️
 
 ```bash
 # Clone repo
