@@ -18,6 +18,8 @@ FlutterShow consists of two main packages: `fluttershow_base` and `fluttershow_k
 - The project utilizes riverpod hooks for state management, providing a simple and quick experience for managing your state.
 - The project is designed to be easily expandable and customizable according to your preferences. You can switch libraries like `intl` to `easy_localizations` or use `fluttergen` for asset organization.
 
+Any more questions? Ask them in our discord: https://discord.gg/xC6wtbzZnP
+
 ## Project Setup
 
 When selecting a branch check out either `main` if you would like to use the latest stable version or go for the current release branch `release/1.1.0` if you want to have the newewst features.
