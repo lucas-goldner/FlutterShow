@@ -25,7 +25,7 @@ Any more questions? Ask them in our discord: https://discord.gg/xC6wtbzZnP
 ### Usage
 
 Feel free to either fork or clone the repo, whatever you prefer.
-When selecting a branch check out `main` if you would like to use the latest stable version or go for the current release branch `release/1.1.0` if you want to have the newewst features.
+When selecting a branch check out `main` if you would like to use the latest stable version or go for the current release branch `release/1.1.0` if you want to have the newest features.
 
 ### Running FlutterShow⚡️
 
@@ -48,7 +48,10 @@ $ flutter run -d macos
 
 ## Getting Started
 
-- When you first explore the project, you'll find some sample slides that demonstrate how slides are built in this project. You have the option to utilize these as templates or completely discard them to begin anew.
+- When you first explore the project, you'll find some sample slides that demonstrate how slides are built in this project.
+
+  You have the option to utilize these as templates or completely discard them to begin anew.
+
 - To create a new slide, add a new widget in the [`lib/slides`](lib/slides) directory.
 - Once you finish creating your slide, navigate to [`lib/presentation/config/pages_of_presentation.dart`](lib/presentation/config/pages_of_presentation.dart) and add a new member to the enum using your new widget.
 - Reload the app, and your slide will appear in all its glory! 🔥
@@ -57,7 +60,7 @@ $ flutter run -d macos
 
 ### Menu
 
-The **Menu** _(Open using M key)_: Toggle dark/light mode depending on the location you are presenting at or quickly jump between your slides.
+The **Menu** _(Open using **M key**)_: Toggle dark/light mode depending on the location you are presenting at or quickly jump between your slides.
 
 ![Menu](docs/images/menu.png)
 
