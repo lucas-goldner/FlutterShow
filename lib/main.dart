@@ -26,8 +26,8 @@ class MyFlutterShow extends ConsumerWidget {
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
     );
