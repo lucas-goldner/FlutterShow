@@ -80,6 +80,16 @@ class S {
     );
   }
 
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `FlutterShow`
   String get flutterShow {
     return Intl.message(

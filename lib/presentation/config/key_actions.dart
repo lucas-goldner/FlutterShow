@@ -6,7 +6,7 @@ enum KeyActions {
     PhysicalKeyboardKey.arrowLeft,
     PhysicalKeyboardKey.arrowDown
   ]),
-  goNextSlide([
+  goToNextSlide([
     PhysicalKeyboardKey.keyD,
     PhysicalKeyboardKey.arrowRight,
     PhysicalKeyboardKey.arrowUp

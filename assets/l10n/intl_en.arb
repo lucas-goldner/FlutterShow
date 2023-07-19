@@ -2,6 +2,7 @@
   "menu": "Menu",
   "darkMode": "Darkmode",
   "slides": "Slides",
+  "close": "Close",
   "flutterShow": "FlutterShow",
   "presentationsInFlutter": "Presentations made easy in Flutter",
   "author": "Made by Lucas Goldner",
