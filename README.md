@@ -42,6 +42,9 @@ $ flutter pub get
 # If language files were not generated
 $ flutter pub run intl_utils:generate
 
+# (Optional) if you want to run it on macOS
+$ cd macos && pod install && cd ..
+
 # Run the app (for example on macOS) OR use the pre-built `launch.json`
 $ flutter run -d macos
 ```
