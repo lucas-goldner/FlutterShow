@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "flutterShow": MessageLookupByLibrary.simpleMessage("FlutterShow"),
         "great": MessageLookupByLibrary.simpleMessage("Great"),
         "lazy": MessageLookupByLibrary.simpleMessage("Lazy"),
+        "madeWith": MessageLookupByLibrary.simpleMessage("Made with:"),
         "madeWithFlutter":
             MessageLookupByLibrary.simpleMessage("Made with Flutter💙"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),

@@ -100,6 +100,16 @@ class S {
     );
   }
 
+  /// `Made with:`
+  String get madeWith {
+    return Intl.message(
+      'Made with:',
+      name: 'madeWith',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Presentations made easy in Flutter`
   String get presentationsInFlutter {
     return Intl.message(

@@ -1,27 +1,24 @@
 # FlutterShow⚡️ - Presentations in Flutter
 
+![FlutterShow Logo](docs/images/fluttershow.png)
 [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Unleash your creativity with presentations like never before! FlutterShow⚡️ is an easy-to-use framework built in Flutter for crafting engaging and interactive presentations.\
+Unleash your creativity with presentations like never before! FlutterShow⚡️ is an easy-to-use framework built in Flutter\
+for crafting engaging and interactive presentations.\
 **Full documentation 📄** showcasing all slides and code snippets to **speed up your development time** available here: https://flutter-show-docs.vercel.app/#/
-
-![Showcase](docs/images/showcase.png)
 
 ## Project Setup
 
 ### Usage
 
-Feel free to either fork or clone the repo, whatever you prefer.\
+Feel free to either **fork** or **clone** the repo, whatever you prefer.\
 Select branch `main` for latest stable version.\
-Select newest release branch `release/1.1.0` for newest features.
+Select latest release branch `release/1.1.0` for newest features.
 
 ### Running FlutterShow⚡️
 
 ```bash
-# Clone repo
-$ git clone git@github.com:lucas-goldner/FlutterShow.git
-
 # (Optional) Checkout release branch for newest features
 $ git checkout release/1.1.0
 
@@ -43,7 +40,7 @@ $ flutter run -d macos
 When you first explore the project, you'll find some sample slides that demonstrate how slides are built in this project.\
 You have the option to use these as templates or completely discard them to begin anew.\
 \
-**🚨Check out this guide** to create **your first slide🚨** -> **https://flutter-show-docs.vercel.app/docs/quick-start**\
+**🚨Check out this guide** to create **your first slide🚨** -> https://flutter-show-docs.vercel.app/docs/quick-start \
 After that open the **Menu** using the _**M key**_!
 
 ## General Information
