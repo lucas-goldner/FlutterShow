@@ -1,10 +1,10 @@
 # FlutterShow⚡️ - Presentations in Flutter
 
-![FlutterShow Logo](docs/images/fluttershow.png)
+![FlutterShow Logo](docs/images/fluttershow.png)\
 [![style: very good analysis](https://img.shields.io/badge/style-very_good_analysis-B22C89.svg)](https://pub.dev/packages/very_good_analysis)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Unleash your creativity with presentations like never before! FlutterShow⚡️ is an easy-to-use framework built in Flutter\
+Unleash your creativity with presentations like never before! FlutterShow⚡️ is an easy-to-use framework built in Flutter
 for crafting engaging and interactive presentations.\
 **Full documentation 📄** showcasing all slides and code snippets to **speed up your development time** available here: https://flutter-show-docs.vercel.app/#/
 
@@ -41,7 +41,7 @@ When you first explore the project, you'll find some sample slides that demonstr
 You have the option to use these as templates or completely discard them to begin anew.\
 \
 **🚨Check out this guide** to create **your first slide🚨** -> https://flutter-show-docs.vercel.app/docs/quick-start \
-After that open the **Menu** using the _**M key**_!
+Once the application is running, use the _**M key**_ to open the **Menu**!
 
 ## General Information
 

@@ -10,12 +10,10 @@ import 'package:flutter_show/slides/06_outro/view/outo_slide.dart';
 enum PagesOfPresentation {
   titleSlide(
     slide: TitleSlide(),
-    animationSteps: 1,
     title: 'Title',
   ),
   agendaSlide(
     slide: AgendaSlide(),
-    animationSteps: 1,
     title: 'Agenda',
   ),
   motivation(
@@ -33,27 +31,30 @@ enum PagesOfPresentation {
   ),
   outro(
     slide: OutroSlide(),
-    animationSteps: 1,
     title: 'Fin',
   );
 
   const PagesOfPresentation({
     required this.slide,
-    required this.animationSteps,
+    this.animationSteps = 1,
     this.title,
   });
 
   /// `slide` is the widget that will be used as slide
   final Widget slide;
 
-  /// Describes the number of times a slide can be clicked before switching
-  /// to the next slide in the enum.
+  /// Represents the current step of the animation in the presentation.
+  /// It determines the number of times a slide can be clicked before
+  /// switching to the next slide in the enum. By default, one click
+  /// on a slide will directly switch to the next slide, sicne `animationSteps`
+  /// is set to 1.
   ///
-  /// The `animationSteps` property, combined with the `animationIndex` property
-  /// of [presentationController], determines which item will be animated/shown
-  /// next during the presentation.
+  /// The `animationIndex` property, in combination with the `animationSteps`
+  /// property of [presentationController], indicates which item will be
+  /// animated/shown next during the presentation.
   ///
-  /// The `animationIndex` keeps track of the current step of the animation.
+  /// It keeps track of the progress of the animation, indicating the current
+  /// step in the sequence.
   ///
   /// An example usage can be seen in the [DownsidesSlide] slide.
   /// The enum member [PagesOfPresentation.downsides] has 6 `animationSteps`.
