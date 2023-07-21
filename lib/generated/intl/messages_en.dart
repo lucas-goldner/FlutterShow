@@ -29,11 +29,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "awesome": MessageLookupByLibrary.simpleMessage("Awesome"),
         "benefits": MessageLookupByLibrary.simpleMessage("Benefits"),
         "boring": MessageLookupByLibrary.simpleMessage("Boring"),
+        "close": MessageLookupByLibrary.simpleMessage("Close"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Darkmode"),
         "downsides": MessageLookupByLibrary.simpleMessage("Downsides"),
         "flutterShow": MessageLookupByLibrary.simpleMessage("FlutterShow"),
         "great": MessageLookupByLibrary.simpleMessage("Great"),
         "lazy": MessageLookupByLibrary.simpleMessage("Lazy"),
+        "madeWith": MessageLookupByLibrary.simpleMessage("Made with:"),
         "madeWithFlutter":
             MessageLookupByLibrary.simpleMessage("Made with Flutter💙"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),

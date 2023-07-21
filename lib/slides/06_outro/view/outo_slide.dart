@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fluttershow_base/components/widgets/spacing/margins.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -31,14 +30,20 @@ class OutroSlide extends ConsumerWidget {
               ),
               horizontalMargin32,
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     S.of(context).thanks,
+                    textAlign: TextAlign.left,
                     style: FSTextStyles.title(),
                   ),
-                  SvgPicture.asset(
-                    'assets/images/shared/flutter_icon.svg',
-                    height: 100,
+                  Text(
+                    S.of(context).madeWith,
+                    textAlign: TextAlign.left,
+                    style: FSTextStyles.regularText(),
+                  ),
+                  Image.asset(
+                    'assets/images/custom/fluttershow.png',
                   )
                 ],
               ),

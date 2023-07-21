@@ -19,15 +19,15 @@ class MyFlutterShow extends ConsumerWidget {
     final controller = ref.watch(presentationController);
 
     return CupertinoApp(
-      key: const Key('MainApp'),
+      key: const Key('FlutterShow'),
       theme: controller.brightness == Brightness.dark ? darkTheme : lightTheme,
       home: const PresentationSlides(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
     );
