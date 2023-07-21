@@ -80,11 +80,31 @@ class S {
     );
   }
 
+  /// `Close`
+  String get close {
+    return Intl.message(
+      'Close',
+      name: 'close',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `FlutterShow`
   String get flutterShow {
     return Intl.message(
       'FlutterShow',
       name: 'flutterShow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Made with:`
+  String get madeWith {
+    return Intl.message(
+      'Made with:',
+      name: 'madeWith',
       desc: '',
       args: [],
     );

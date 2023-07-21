@@ -61,7 +61,7 @@ class Menu extends HookConsumerWidget {
                         verticalMargin8,
                         CupertinoButton.filled(
                           onPressed: toggleMenu,
-                          child: const Text('Close'),
+                          child: Text(t.close),
                         )
                       ],
                     ),

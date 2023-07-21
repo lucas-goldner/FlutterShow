@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_show/presentation/config/contants.dart';
 import 'package:flutter_show/presentation/config/key_actions.dart';
 import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
 import 'package:flutter_show/presentation/model/presentation.dart';
@@ -19,6 +20,7 @@ class PresentationController extends StateNotifier<Presentation> {
           ),
         );
 
+  /// This function listens to all key events
   KeyEventResult handleKeyEvents(
     RawKeyEvent event,
     ValueNotifier<bool> keyPressed,
@@ -31,7 +33,7 @@ class PresentationController extends StateNotifier<Presentation> {
         return KeyEventResult.handled;
       }
 
-      if (KeyActions.goNextSlide.keybindings
+      if (KeyActions.goToNextSlide.keybindings
           .any((key) => key == event.physicalKey)) {
         goToNextItem();
         keyPressed.value = true;
@@ -52,15 +54,21 @@ class PresentationController extends StateNotifier<Presentation> {
     return KeyEventResult.ignored;
   }
 
+  /// This function is used in to increase the `animationIndex` to
+  /// show or animate the next widget. If it hits the slides `animationSteps`
+  /// it will switch to the next slide.
   void goToNextItem() {
     state = state.copyWith(animationIndex: state.animationIndex + 1);
 
     if (state.animationIndex >=
-        PagesOfPresentation.values.toList()[state.page].items) {
+        PagesOfPresentation.values.toList()[state.page].animationSteps) {
       nextPage();
     }
   }
 
+  /// This function is used in to decrease the `animationIndex` to
+  /// hide the current shown widget. If it hits the slides 0
+  /// it will switch to the last slide.
   void goToLastItem() {
     if (state.animationIndex == 0) {
       toLastPage();
@@ -77,8 +85,10 @@ class PresentationController extends StateNotifier<Presentation> {
       );
     } else {
       state.pageController.nextPage(
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.ease,
+        duration: const Duration(
+          milliseconds: AppConstants.pageControllerAnimationDuration,
+        ),
+        curve: AppConstants.pageControllerAnimationCurve,
       );
       state = state.copyWith(page: state.page + 1, animationIndex: 0);
     }
@@ -89,21 +99,27 @@ class PresentationController extends StateNotifier<Presentation> {
       state = state.copyWith(page: 0, animationIndex: 0);
     } else {
       state.pageController.previousPage(
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.ease,
+        duration: const Duration(
+          milliseconds: AppConstants.pageControllerAnimationDuration,
+        ),
+        curve: AppConstants.pageControllerAnimationCurve,
       );
       final itemsOnPage =
-          PagesOfPresentation.values.toList()[state.page - 1].items;
+          PagesOfPresentation.values.toList()[state.page - 1].animationSteps;
       state = state.copyWith(page: state.page - 1, animationIndex: itemsOnPage);
     }
   }
 
+  /// This function is used for the quicktravel on the Menu
+  /// in order to switch between slides quickly
   void switchToPage(int index) {
     state = state.copyWith(page: index, animationIndex: 0);
     state.pageController.animateToPage(
       index,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.ease,
+      duration: const Duration(
+        milliseconds: AppConstants.pageControllerAnimationDuration,
+      ),
+      curve: AppConstants.pageControllerAnimationCurve,
     );
   }
 
