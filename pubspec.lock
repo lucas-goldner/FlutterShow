@@ -5,18 +5,18 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "8880b4cfe7b5b17d57c052a5a3a8cc1d4f546261c7cc8fbd717bd53f48db0568"
+      sha256: ae92f5d747aee634b87f89d9946000c2de774be1d6ac3e58268224348cd0101a
       url: "https://pub.dev"
     source: hosted
-    version: "59.0.0"
+    version: "61.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
-      sha256: a89627f49b0e70e068130a36571409726b04dab12da7e5625941d2c8ec278b96
+      sha256: ea3d8652bda62982addfd92fdc2d0214e5f82e43325104990d4f4c4a2a313562
       url: "https://pub.dev"
     source: hosted
-    version: "5.11.1"
+    version: "5.13.0"
   analyzer_plugin:
     dependency: transitive
     description:
@@ -149,10 +149,10 @@ packages:
     dependency: "direct dev"
     description:
       name: dart_code_metrics
-      sha256: "162c81dbd0a2ba182f38ca615335f3e8878f212ec7beea83d6bfad4e99eb541a"
+      sha256: "3dede3f7abc077a4181ec7445448a289a9ce08e2981e6a4d49a3fb5099d47e1f"
       url: "https://pub.dev"
     source: hosted
-    version: "5.7.3"
+    version: "5.7.6"
   dart_code_metrics_presets:
     dependency: transitive
     description:
@@ -161,14 +161,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.7.0"
+  dart_code_viewer_x:
+    dependency: transitive
+    description:
+      name: dart_code_viewer_x
+      sha256: eb8e1b12303b3f99d69423d85f4cbdde8dbb4c451caa4210a1e6dcb2568664e9
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   dart_style:
     dependency: transitive
     description:
       name: dart_style
-      sha256: f4f1f73ab3fd2afcbcca165ee601fe980d966af6a21b5970c6c9376955c528ad
+      sha256: "1efa911ca7086affd35f463ca2fc1799584fb6aa89883cf0af8e3664d6a02d55"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.1"
+    version: "2.3.2"
   dartx:
     dependency: transitive
     description:
@@ -259,18 +267,16 @@ packages:
   fluttershow_base:
     dependency: "direct main"
     description:
-      name: fluttershow_base
-      sha256: "77f28a6e45a2cb2c89644d39538a29dde308cabc4fea9524119975080bbaf665"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
+      path: "../fluttershow_base"
+      relative: true
+    source: path
+    version: "1.1.0"
   fluttershow_keynote:
     dependency: "direct main"
     description:
-      name: fluttershow_keynote
-      sha256: dcf8341a3142fd71faaa52199290b414e119a6418e6bb78573aa21b190f7d336
-      url: "https://pub.dev"
-    source: hosted
+      path: "../fluttershow_keynote"
+      relative: true
+    source: path
     version: "1.0.0"
   glob:
     dependency: transitive

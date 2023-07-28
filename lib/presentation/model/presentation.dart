@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
+import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/slides/04_downsides/view/downsides_slide.dart';
 
