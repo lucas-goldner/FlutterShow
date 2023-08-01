@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
+import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -25,12 +25,10 @@ class SlideShow extends ConsumerWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: PagesOfPresentation.values
-            .asMap()
-            .entries
+        children: PagesOfPresentation.values.slides.indexed
             .map(
               (entry) => GestureDetector(
-                onTap: () => switchToSlide(entry.key),
+                onTap: () => switchToSlide(entry.$1),
                 child: Container(
                   color: generateRandomColor(),
                   height: 100,
@@ -40,7 +38,7 @@ class SlideShow extends ConsumerWidget {
                     child: Padding(
                       padding: allPadding4,
                       child: Text(
-                        entry.value.title ?? 'Slide-${entry.key}',
+                        entry.$2.title ?? 'Slide-${entry.$1}',
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

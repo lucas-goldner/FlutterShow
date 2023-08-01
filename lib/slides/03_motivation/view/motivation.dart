@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_show/generated/l10n.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
+import 'package:flutter_show/slides/03_motivation/widgets/code.dart';
 import 'package:flutter_show/styles/fs_gradients.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
 import 'package:fluttershow_base/components/model/enum/directional_animation_direction.dart';
@@ -33,7 +34,7 @@ class MotivationSlide extends ConsumerWidget {
             children: [
               Visibility(
                 visible: controller.animationIndex == 2,
-                child: Text(t.step2close, style: FSTextStyles.regularText()),
+                child: const Code(),
               ),
               Visibility(
                 visible: controller.animationIndex != 2,

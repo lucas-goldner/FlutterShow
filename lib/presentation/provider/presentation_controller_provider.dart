@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_show/presentation/config/contants.dart';
 import 'package:flutter_show/presentation/config/key_actions.dart';
-import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
+import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/model/presentation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -61,7 +61,7 @@ class PresentationController extends StateNotifier<Presentation> {
     state = state.copyWith(animationIndex: state.animationIndex + 1);
 
     if (state.animationIndex >=
-        PagesOfPresentation.values.toList()[state.page].animationSteps) {
+        PagesOfPresentation.values.toList()[state.page].slide.animationSteps) {
       nextPage();
     }
   }
@@ -104,8 +104,11 @@ class PresentationController extends StateNotifier<Presentation> {
         ),
         curve: AppConstants.pageControllerAnimationCurve,
       );
-      final itemsOnPage =
-          PagesOfPresentation.values.toList()[state.page - 1].animationSteps;
+      final itemsOnPage = PagesOfPresentation.values
+          .toList()[state.page - 1]
+          .slide
+          .animationSteps;
+
       state = state.copyWith(page: state.page - 1, animationIndex: itemsOnPage);
     }
   }
