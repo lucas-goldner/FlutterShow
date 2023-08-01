@@ -130,6 +130,10 @@ class PresentationController extends StateNotifier<Presentation> {
         brightness: brightness,
       );
 
+  void setLocale(Locale locale) => state = state.copyWith(
+        locale: locale,
+      );
+
   void toggleMenu() => state = state.copyWith(menuOpen: !state.menuOpen);
 }
 
