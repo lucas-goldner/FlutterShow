@@ -330,16 +330,6 @@ class S {
     );
   }
 
-  /// `Step Two closer look`
-  String get step2close {
-    return Intl.message(
-      'Step Two closer look',
-      name: 'step2close',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Step Three`
   String get step3 {
     return Intl.message(

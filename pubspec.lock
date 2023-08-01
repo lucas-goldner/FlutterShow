@@ -267,17 +267,19 @@ packages:
   fluttershow_base:
     dependency: "direct main"
     description:
-      path: "../fluttershow_base"
-      relative: true
-    source: path
-    version: "1.1.0"
+      name: fluttershow_base
+      sha256: "0b1f54e21e01c463ac83f4cabc79fdb7e47d0dd50a2ee5c915e3e0ea6de9160b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   fluttershow_keynote:
     dependency: "direct main"
     description:
-      path: "../fluttershow_keynote"
-      relative: true
-    source: path
-    version: "1.0.0"
+      name: fluttershow_keynote
+      sha256: bcdd743a231d9295b99a0e05b10a8a548559f2271debe75861302998abc961d5
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   glob:
     dependency: transitive
     description:
