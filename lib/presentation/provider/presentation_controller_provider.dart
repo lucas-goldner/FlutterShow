@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -139,7 +140,19 @@ class PresentationController extends StateNotifier<Presentation> {
         mouseStyle: mouseStyle,
       );
 
-  void toggleMenu() => state = state.copyWith(menuOpen: !state.menuOpen);
+  void toggleMenu() {
+    if (!state.menuOpen && state.mouseStyle == MouseStyle.hidden) {
+      state = state.copyWith(
+        menuOpen: !state.menuOpen,
+        mouseStyle: MouseStyle.basic,
+      );
+      return;
+    }
+
+    state = state.copyWith(
+      menuOpen: !state.menuOpen,
+    );
+  }
 }
 
 final presentationController =

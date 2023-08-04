@@ -1,14 +1,20 @@
 PODS:
+  - custom_mouse_cursor (0.0.1):
+    - FlutterMacOS
   - FlutterMacOS (1.0.0)
 
 DEPENDENCIES:
+  - custom_mouse_cursor (from `Flutter/ephemeral/.symlinks/plugins/custom_mouse_cursor/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
 
 EXTERNAL SOURCES:
+  custom_mouse_cursor:
+    :path: Flutter/ephemeral/.symlinks/plugins/custom_mouse_cursor/macos
   FlutterMacOS:
     :path: Flutter/ephemeral
 
 SPEC CHECKSUMS:
+  custom_mouse_cursor: 19b9cb1bcd2e792e326c15e32b48f8dba06132da
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
 
 PODFILE CHECKSUM: 236401fc2c932af29a9fcf0e97baeeb2d750d367

@@ -84,7 +84,7 @@ class Menu extends HookConsumerWidget {
                             options: MouseStyle.values
                                 .map(
                                   (mouseStyle) => (
-                                    mouseStyle.mouseStyleName,
+                                    mouseStyle.styleName,
                                     mouseStyle,
                                   ),
                                 )

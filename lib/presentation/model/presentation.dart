@@ -13,7 +13,7 @@ class Presentation {
     required this.brightness,
     required this.menuOpen,
     required this.pageController,
-    this.mouseStyle = MouseStyle.defaultMouse,
+    this.mouseStyle = MouseStyle.basic,
   });
 
   /// Represents the current step of the animation in the presentation.

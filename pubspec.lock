@@ -81,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+  chalkdart:
+    dependency: transitive
+    description:
+      name: chalkdart
+      sha256: "5fceaf0eb65cb3a0746423aad4b285b9ec123133b9435630ac027f305b21e8b5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
   characters:
     dependency: transitive
     description:
@@ -145,6 +153,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  custom_mouse_cursor:
+    dependency: "direct main"
+    description:
+      name: custom_mouse_cursor
+      sha256: "66e8949273aa5f3199f6a23e9ca488a0d8e0587ddba54189d7790a136f391edb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   dart_code_metrics:
     dependency: "direct dev"
     description:
