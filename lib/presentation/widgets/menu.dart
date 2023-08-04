@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/generated/l10n.dart';
+import 'package:flutter_show/presentation/config/mouse_style.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/widgets/menu_multiselect.dart';
 import 'package:flutter_show/presentation/widgets/menu_option.dart';
@@ -25,6 +26,9 @@ class Menu extends HookConsumerWidget {
 
     void switchLocale({required Locale value}) =>
         ref.watch(presentationController.notifier).setLocale(value);
+
+    void switchMouseStyle({required MouseStyle value}) =>
+        ref.watch(presentationController.notifier).setMouseStyle(value);
 
     void toggleMenu() =>
         ref.watch(presentationController.notifier).toggleMenu();
@@ -72,6 +76,21 @@ class Menu extends HookConsumerWidget {
                                 .toList(),
                             callback: (value) =>
                                 switchLocale(value: value.$2 as Locale),
+                          ),
+                          verticalMargin16,
+                          MenuMultiSelect(
+                            optionName: t.mouse,
+                            value: controller.mouseStyle,
+                            options: MouseStyle.values
+                                .map(
+                                  (mouseStyle) => (
+                                    mouseStyle.mouseStyleName,
+                                    mouseStyle,
+                                  ),
+                                )
+                                .toList(),
+                            callback: (value) =>
+                                switchMouseStyle(value: value.$2 as MouseStyle),
                           ),
                           verticalMargin16,
                           CupertinoButton.filled(

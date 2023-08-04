@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "madeWithFlutter": MessageLookupByLibrary.simpleMessage("Flutterで作成💙"),
         "menu": MessageLookupByLibrary.simpleMessage("メニュー"),
         "motiviation": MessageLookupByLibrary.simpleMessage("モチベーション"),
+        "mouse": MessageLookupByLibrary.simpleMessage("マウス"),
         "notFlutter": MessageLookupByLibrary.simpleMessage("Flutterではありません"),
         "outstanding": MessageLookupByLibrary.simpleMessage("傑出"),
         "party": MessageLookupByLibrary.simpleMessage("パーティー 🎉"),

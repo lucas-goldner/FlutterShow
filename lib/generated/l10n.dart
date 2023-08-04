@@ -90,6 +90,26 @@ class S {
     );
   }
 
+  /// `Locale`
+  String get language {
+    return Intl.message(
+      'Locale',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mouse`
+  String get mouse {
+    return Intl.message(
+      'Mouse',
+      name: 'mouse',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `FlutterShow`
   String get flutterShow {
     return Intl.message(
@@ -335,16 +355,6 @@ class S {
     return Intl.message(
       'Step Three',
       name: 'step3',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Locale`
-  String get language {
-    return Intl.message(
-      'Locale',
-      name: 'language',
       desc: '',
       args: [],
     );

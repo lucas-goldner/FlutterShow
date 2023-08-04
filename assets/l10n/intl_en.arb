@@ -3,6 +3,8 @@
   "darkMode": "Darkmode",
   "slides": "Slides",
   "close": "Close",
+  "language": "Locale",
+  "mouse": "Mouse",
   "flutterShow": "FlutterShow",
   "madeWith": "Made with:",
   "presentationsInFlutter": "Presentations made easy in Flutter",
@@ -27,6 +29,5 @@
   "sideWidget": "Side Widget",
   "step1": "Step One",
   "step2": "Step Two",
-  "step3": "Step Three",
-  "language": "Locale"
+  "step3": "Step Three"
 }

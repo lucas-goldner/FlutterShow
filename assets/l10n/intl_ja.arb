@@ -3,6 +3,8 @@
   "darkMode": "ダークモード",
   "slides": "スライド",
   "close": "閉じる",
+  "language": "言語",
+  "mouse": "マウス",
   "flutterShow": "FlutterShow",
   "madeWith": "このプレゼンフレームワークは",
   "presentationsInFlutter": "Flutterで簡単にプレゼンテーション",
@@ -27,6 +29,5 @@
   "sideWidget": "サイドwidget",
   "step1": "ステップ一",
   "step2": "ステップ二",
-  "step3": "ステップ三",
-  "language": "言語"
+  "step3": "ステップ三"
 }

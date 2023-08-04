@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Made with Flutter💙"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
         "motiviation": MessageLookupByLibrary.simpleMessage("Motiviation"),
+        "mouse": MessageLookupByLibrary.simpleMessage("Mouse"),
         "notFlutter": MessageLookupByLibrary.simpleMessage("Its not Flutter"),
         "outstanding": MessageLookupByLibrary.simpleMessage("Outstanding"),
         "party": MessageLookupByLibrary.simpleMessage("Party 🎉"),

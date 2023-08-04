@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_show/presentation/config/contants.dart';
 import 'package:flutter_show/presentation/config/key_actions.dart';
+import 'package:flutter_show/presentation/config/mouse_style.dart';
 import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/model/presentation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -132,6 +133,10 @@ class PresentationController extends StateNotifier<Presentation> {
 
   void setLocale(Locale locale) => state = state.copyWith(
         locale: locale,
+      );
+
+  void setMouseStyle(MouseStyle mouseStyle) => state = state.copyWith(
+        mouseStyle: mouseStyle,
       );
 
   void toggleMenu() => state = state.copyWith(menuOpen: !state.menuOpen);

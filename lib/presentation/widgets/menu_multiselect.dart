@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttershow_base/components/widgets/spacing/margins.dart';
+import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
 
 class MenuMultiSelect extends StatelessWidget {
   const MenuMultiSelect({
@@ -21,7 +22,7 @@ class MenuMultiSelect extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SizedBox(
         height: 40,
-        width: 180,
+        width: 160,
         child: Row(
           children: [
             Text(optionName),
@@ -34,12 +35,14 @@ class MenuMultiSelect extends StatelessWidget {
                   onTap: () {
                     callback(options[index]);
                   },
-                  child: Container(
-                    width: 40,
+                  child: ColoredBox(
                     color: isSelected(index) ? Colors.blue : Colors.grey,
-                    child: Center(
-                      child: Text(
-                        options[index].$1,
+                    child: Padding(
+                      padding: horizontalPadding12,
+                      child: Center(
+                        child: Text(
+                          options[index].$1,
+                        ),
                       ),
                     ),
                   ),
