@@ -27,9 +27,7 @@ class MyFlutterShow extends ConsumerWidget {
           ? FutureBuilder(
               future: MouseStyle.custom.customCursor,
               builder: (context, snapshot) => MouseRegion(
-                cursor: snapshot.hasData
-                    ? snapshot.data ?? MouseStyle.basic.cursor
-                    : MouseStyle.basic.cursor,
+                cursor: snapshot.data ?? MouseStyle.basic.cursor,
                 child: const PresentationSlides(),
               ),
             )
