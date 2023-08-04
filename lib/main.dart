@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_show/generated/l10n.dart';
+import 'package:flutter_show/presentation/config/mouse_style.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/view/presentation_slides.dart';
 import 'package:flutter_show/styles/theme/dark_theme.dart';
@@ -22,7 +23,18 @@ class MyFlutterShow extends ConsumerWidget {
       key: const Key('FlutterShow'),
       locale: controller.locale,
       theme: controller.brightness == Brightness.dark ? darkTheme : lightTheme,
-      home: const PresentationSlides(),
+      home: controller.mouseStyle.styleName == MouseStyle.custom.styleName
+          ? FutureBuilder(
+              future: MouseStyle.custom.customCursor,
+              builder: (context, snapshot) => MouseRegion(
+                cursor: snapshot.data ?? MouseStyle.basic.cursor,
+                child: const PresentationSlides(),
+              ),
+            )
+          : MouseRegion(
+              cursor: controller.mouseStyle.cursor,
+              child: const PresentationSlides(),
+            ),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         S.delegate,

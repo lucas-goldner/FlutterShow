@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  custom_mouse_cursor: ^1.1.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.6
