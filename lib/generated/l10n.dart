@@ -110,6 +110,36 @@ class S {
     );
   }
 
+  /// `Basic`
+  String get basic {
+    return Intl.message(
+      'Basic',
+      name: 'basic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hidden`
+  String get hidden {
+    return Intl.message(
+      'Hidden',
+      name: 'hidden',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Custom`
+  String get custom {
+    return Intl.message(
+      'Custom',
+      name: 'custom',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `FlutterShow`
   String get flutterShow {
     return Intl.message(

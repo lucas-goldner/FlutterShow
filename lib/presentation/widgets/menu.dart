@@ -84,7 +84,7 @@ class Menu extends HookConsumerWidget {
                             options: MouseStyle.values
                                 .map(
                                   (mouseStyle) => (
-                                    mouseStyle.styleName,
+                                    mouseStyle.getLocalizedName(context),
                                     mouseStyle,
                                   ),
                                 )

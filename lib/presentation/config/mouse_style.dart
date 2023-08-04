@@ -1,6 +1,7 @@
 import 'package:custom_mouse_cursor/custom_mouse_cursor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_show/generated/l10n.dart';
 
 enum MouseStyle {
   basic('Default Mouse', SystemMouseCursors.basic),
@@ -11,6 +12,12 @@ enum MouseStyle {
 
   final String styleName;
   final MouseCursor cursor;
+
+  String getLocalizedName(BuildContext context) => switch (this) {
+        MouseStyle.basic => S.of(context).basic,
+        MouseStyle.hidden => S.of(context).hidden,
+        MouseStyle.custom => S.of(context).custom,
+      };
 
   /// Edit the custom cursor however you like:
   ///
