@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_show/presentation/config/contants.dart';
+import 'package:flutter_show/presentation/config/cursor_style.dart';
 import 'package:flutter_show/presentation/config/key_actions.dart';
-import 'package:flutter_show/presentation/config/mouse_style.dart';
 import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/model/presentation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -28,25 +28,28 @@ class PresentationController extends StateNotifier<Presentation> {
     ValueNotifier<bool> keyPressed,
   ) {
     if (event is RawKeyDownEvent && !keyPressed.value) {
-      if (KeyActions.goToLastSlide.keybindings
-          .any((key) => key == event.physicalKey)) {
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.goToLastSlide,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
         goToLastItem();
-        keyPressed.value = true;
-        return KeyEventResult.handled;
+        _handledKeyEventResult(keyPressed);
       }
 
-      if (KeyActions.goToNextSlide.keybindings
-          .any((key) => key == event.physicalKey)) {
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.goToNextSlide,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
         goToNextItem();
-        keyPressed.value = true;
-        return KeyEventResult.handled;
+        _handledKeyEventResult(keyPressed);
       }
 
-      if (KeyActions.openMenu.keybindings
-          .any((key) => key == event.physicalKey)) {
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.openMenu,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
         toggleMenu();
-        keyPressed.value = true;
-        return KeyEventResult.handled;
+        _handledKeyEventResult(keyPressed);
       }
 
       return KeyEventResult.ignored;
@@ -54,6 +57,17 @@ class PresentationController extends StateNotifier<Presentation> {
       keyPressed.value = false;
     }
     return KeyEventResult.ignored;
+  }
+
+  bool _hasTriggeredKeyAction({
+    required KeyActions keyAction,
+    required PhysicalKeyboardKey physicalKeyboardKey,
+  }) =>
+      keyAction.keybindings.any((key) => key == physicalKeyboardKey);
+
+  KeyEventResult _handledKeyEventResult(ValueNotifier<bool> keyPressed) {
+    keyPressed.value = true;
+    return KeyEventResult.handled;
   }
 
   /// This function is used in to increase the `animationIndex` to
@@ -136,15 +150,17 @@ class PresentationController extends StateNotifier<Presentation> {
         locale: locale,
       );
 
-  void setMouseStyle(MouseStyle mouseStyle) => state = state.copyWith(
-        mouseStyle: mouseStyle,
-      );
+  void setCursorStyle(CursorStyle cursorStyle) {
+    state = state.copyWith(
+      cursorStyle: cursorStyle,
+    );
+  }
 
   void toggleMenu() {
-    if (!state.menuOpen && state.mouseStyle == MouseStyle.hidden) {
+    if (state.menuOpen && state.cursorStyle == CursorStyle.hidden) {
       state = state.copyWith(
         menuOpen: !state.menuOpen,
-        mouseStyle: MouseStyle.basic,
+        cursorStyle: CursorStyle.basic,
       );
       return;
     }

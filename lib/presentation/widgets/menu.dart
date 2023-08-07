@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/generated/l10n.dart';
-import 'package:flutter_show/presentation/config/mouse_style.dart';
+import 'package:flutter_show/presentation/config/cursor_style.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/widgets/menu_multiselect.dart';
 import 'package:flutter_show/presentation/widgets/menu_option.dart';
@@ -27,8 +27,8 @@ class Menu extends HookConsumerWidget {
     void switchLocale({required Locale value}) =>
         ref.watch(presentationController.notifier).setLocale(value);
 
-    void switchMouseStyle({required MouseStyle value}) =>
-        ref.watch(presentationController.notifier).setMouseStyle(value);
+    void switchMouseStyle({required CursorStyle value}) =>
+        ref.watch(presentationController.notifier).setCursorStyle(value);
 
     void toggleMenu() =>
         ref.watch(presentationController.notifier).toggleMenu();
@@ -80,8 +80,8 @@ class Menu extends HookConsumerWidget {
                           verticalMargin16,
                           MenuMultiSelect(
                             optionName: t.mouse,
-                            value: controller.mouseStyle,
-                            options: MouseStyle.values
+                            value: controller.cursorStyle,
+                            options: CursorStyle.values
                                 .map(
                                   (mouseStyle) => (
                                     mouseStyle.getLocalizedName(context),
@@ -89,8 +89,9 @@ class Menu extends HookConsumerWidget {
                                   ),
                                 )
                                 .toList(),
-                            callback: (value) =>
-                                switchMouseStyle(value: value.$2 as MouseStyle),
+                            callback: (value) => switchMouseStyle(
+                              value: value.$2 as CursorStyle,
+                            ),
                           ),
                           verticalMargin16,
                           CupertinoButton.filled(
