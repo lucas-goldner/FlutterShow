@@ -86,13 +86,18 @@ class PresentationSlides extends HookConsumerWidget {
               //       PagesOfPresentation.values[index].slide,
               // ),
             ),
-            AnimatedPositioned(
-              bottom: controller.menuOpen
-                  ? 0
-                  : -FSStyleConstants.getMenuHeight(size),
-              curve: Curves.easeInOut,
-              duration: const Duration(milliseconds: 500),
-              child: const Menu(),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: AnimatedSize(
+                curve: Curves.fastOutSlowIn,
+                duration: const Duration(milliseconds: 500),
+                child: SizedBox(
+                  height: controller.menuOpen
+                      ? 0
+                      : FSStyleConstants.getMenuHeight(size),
+                  child: const Menu(),
+                ),
+              ),
             )
           ],
         ),
