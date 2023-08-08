@@ -25,15 +25,14 @@ class PresentationController extends StateNotifier<Presentation> {
   /// This function listens to all key events
   KeyEventResult handleKeyEvents(
     RawKeyEvent event,
-    ValueNotifier<bool> keyPressed,
   ) {
-    if (event is RawKeyDownEvent && !keyPressed.value) {
+    if (event is RawKeyDownEvent) {
       if (_hasTriggeredKeyAction(
         keyAction: KeyActions.goToLastSlide,
         physicalKeyboardKey: event.physicalKey,
       )) {
         goToLastItem();
-        _handledKeyEventResult(keyPressed);
+        return KeyEventResult.handled;
       }
 
       if (_hasTriggeredKeyAction(
@@ -41,7 +40,7 @@ class PresentationController extends StateNotifier<Presentation> {
         physicalKeyboardKey: event.physicalKey,
       )) {
         goToNextItem();
-        _handledKeyEventResult(keyPressed);
+        return KeyEventResult.handled;
       }
 
       if (_hasTriggeredKeyAction(
@@ -49,7 +48,7 @@ class PresentationController extends StateNotifier<Presentation> {
         physicalKeyboardKey: event.physicalKey,
       )) {
         toggleMenu();
-        _handledKeyEventResult(keyPressed);
+        return KeyEventResult.handled;
       }
 
       if (_hasTriggeredKeyAction(
@@ -57,14 +56,10 @@ class PresentationController extends StateNotifier<Presentation> {
         physicalKeyboardKey: event.physicalKey,
       )) {
         toggleMouseVisibility();
-        _handledKeyEventResult(keyPressed);
+        return KeyEventResult.handled;
       }
 
       return KeyEventResult.ignored;
-    } else if (event is RawKeyUpEvent) {
-      keyPressed.value = false;
-
-      return KeyEventResult.handled;
     }
 
     return KeyEventResult.ignored;
@@ -75,11 +70,6 @@ class PresentationController extends StateNotifier<Presentation> {
     required PhysicalKeyboardKey physicalKeyboardKey,
   }) =>
       keyAction.keybindings.any((key) => key == physicalKeyboardKey);
-
-  KeyEventResult _handledKeyEventResult(ValueNotifier<bool> keyPressed) {
-    keyPressed.value = true;
-    return KeyEventResult.handled;
-  }
 
   /// This function is used in to increase the `animationIndex` to
   /// show or animate the next widget. If it hits the slides `animationSteps`

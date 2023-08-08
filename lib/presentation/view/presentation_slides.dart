@@ -16,7 +16,6 @@ class PresentationSlides extends HookConsumerWidget {
     final controller =
         ref.read<PresentationController>(presentationController.notifier);
     final focusNode = useFocusNode();
-    final keyPressed = useState(false);
     final size = MediaQuery.sizeOf(context);
 
     void onSlidePress() {
@@ -29,9 +28,10 @@ class PresentationSlides extends HookConsumerWidget {
 
     void onSecondaryTap() => controller.toLastPage();
 
-    return RawKeyboardListener(
+    return Focus(
+      autofocus: true,
       focusNode: focusNode,
-      onKey: (keyEvent) => controller.handleKeyEvents(keyEvent, keyPressed),
+      onKey: (focus, onKey) => controller.handleKeyEvents(onKey),
       child: GestureDetector(
         onTap: onSlidePress,
         onSecondaryTap: onSecondaryTap,
