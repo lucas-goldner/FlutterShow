@@ -5,6 +5,7 @@ import 'package:flutter_show/presentation/provider/presentation_controller_provi
 import 'package:flutter_show/presentation/widgets/menu_multiselect.dart';
 import 'package:flutter_show/presentation/widgets/menu_option.dart';
 import 'package:flutter_show/presentation/widgets/slide_show.dart';
+import 'package:flutter_show/styles/fs_colors.dart';
 import 'package:flutter_show/styles/fs_style_constants.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
 import 'package:fluttershow_base/components/widgets/spacing/margins.dart';
@@ -16,7 +17,7 @@ class Menu extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.watch(presentationController);
+    final presentation = ref.watch(presentationController);
     final size = MediaQuery.sizeOf(context);
     final t = S.of(context);
 
@@ -64,13 +65,13 @@ class Menu extends HookConsumerWidget {
                           ),
                           MenuOption(
                             description: t.darkMode,
-                            value: controller.brightness == Brightness.dark,
+                            value: presentation.brightness == Brightness.dark,
                             callback: switchTheme,
                           ),
                           verticalMargin8,
                           MenuMultiSelect(
                             optionName: t.language,
-                            value: controller.locale.languageCode,
+                            value: presentation.locale.languageCode,
                             options: S.delegate.supportedLocales
                                 .map((locale) => (locale.languageCode, locale))
                                 .toList(),
@@ -80,7 +81,7 @@ class Menu extends HookConsumerWidget {
                           verticalMargin16,
                           MenuMultiSelect(
                             optionName: t.mouse,
-                            value: controller.cursorStyle,
+                            value: presentation.cursorStyle,
                             options: CursorStyle.values
                                 .map(
                                   (mouseStyle) => (
@@ -96,7 +97,15 @@ class Menu extends HookConsumerWidget {
                           verticalMargin16,
                           CupertinoButton.filled(
                             onPressed: toggleMenu,
-                            child: Text(t.close),
+                            child: Text(
+                              t.close,
+                              style: TextStyle(
+                                color: FSColors.dynamicColor(
+                                  presentation.brightness,
+                                  darkColor: CupertinoColors.white,
+                                ),
+                              ),
+                            ),
                           ),
                           verticalMargin8,
                         ],
