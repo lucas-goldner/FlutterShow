@@ -12,34 +12,26 @@ class PresentationSlides extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.watch(presentationController);
-    final focusNode = FocusNode();
+    final presentation = ref.watch(presentationController);
+    final controller =
+        ref.read<PresentationController>(presentationController.notifier);
+    final focusNode = useFocusNode();
     final keyPressed = useState(false);
     final size = MediaQuery.sizeOf(context);
-
-    void toNextItem() => ref
-        .read<PresentationController>(presentationController.notifier)
-        .goToNextItem();
-
-    KeyEventResult handleKeyEvent(RawKeyEvent event) => ref
-        .read<PresentationController>(presentationController.notifier)
-        .handleKeyEvents(event, keyPressed);
 
     void onSlidePress() {
       if (!focusNode.hasFocus) {
         FocusScope.of(context).requestFocus(focusNode);
       }
 
-      toNextItem();
+      controller.goToNextItem();
     }
 
-    void onSecondaryTap() => ref
-        .read<PresentationController>(presentationController.notifier)
-        .toLastPage();
+    void onSecondaryTap() => controller.toLastPage();
 
     return RawKeyboardListener(
       focusNode: focusNode,
-      onKey: handleKeyEvent,
+      onKey: (keyEvent) => controller.handleKeyEvents(keyEvent, keyPressed),
       child: GestureDetector(
         onTap: onSlidePress,
         onSecondaryTap: onSecondaryTap,
@@ -56,23 +48,23 @@ class PresentationSlides extends HookConsumerWidget {
                   /// as the `default` way of animating between slides.
                   PageBuilderPresentation(
                 presentationPages: PagesOfPresentation.values.slides,
-                pageController: controller.pageController,
+                pageController: presentation.pageController,
               ),
 
               /// You are a fan of fading? Try this one!
               ///
               //     FadingPresentation(
-              //   pageIndex: controller.page,
+              //   pageIndex: presentation.page,
               //   presentationPages: PagesOfPresentation.values.slides,
-              //   pageController: controller.pageController,
+              //   pageController: presentation.pageController,
               // ),
 
               /// Prefer seeing your slides popping onto the screen?
               ///
               //     ScalingPresentation(
-              //   pageIndex: controller.page,
+              //   pageIndex: presentation.page,
               //   presentationPages: PagesOfPresentation.values.slides,
-              //   pageController: controller.pageController,
+              //   pageController: presentation.pageController,
               // ),
 
               /// Or craft something amazing yourself
@@ -81,7 +73,7 @@ class PresentationSlides extends HookConsumerWidget {
               // PageView.builder(
               //   physics: const NeverScrollableScrollPhysics(),
               //   itemCount: PagesOfPresentation.values.length,
-              //   controller: controller.pageController,
+              //   controller: presentation.pageController,
               //   itemBuilder: (context, index) =>
               //       PagesOfPresentation.values[index].slide,
               // ),
@@ -92,7 +84,7 @@ class PresentationSlides extends HookConsumerWidget {
                 curve: Curves.fastOutSlowIn,
                 duration: const Duration(milliseconds: 500),
                 child: SizedBox(
-                  height: controller.menuOpen
+                  height: presentation.menuOpen
                       ? 0
                       : FSStyleConstants.getMenuHeight(size),
                   child: const Menu(),

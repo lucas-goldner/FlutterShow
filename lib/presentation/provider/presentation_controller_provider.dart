@@ -52,10 +52,21 @@ class PresentationController extends StateNotifier<Presentation> {
         _handledKeyEventResult(keyPressed);
       }
 
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.showHideMouse,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
+        toggleMouseVisibility();
+        _handledKeyEventResult(keyPressed);
+      }
+
       return KeyEventResult.ignored;
     } else if (event is RawKeyUpEvent) {
       keyPressed.value = false;
+
+      return KeyEventResult.handled;
     }
+
     return KeyEventResult.ignored;
   }
 
@@ -153,6 +164,14 @@ class PresentationController extends StateNotifier<Presentation> {
   void setCursorStyle(CursorStyle cursorStyle) {
     state = state.copyWith(
       cursorStyle: cursorStyle,
+    );
+  }
+
+  void toggleMouseVisibility() {
+    state = state.copyWith(
+      cursorStyle: state.cursorStyle == CursorStyle.basic
+          ? CursorStyle.hidden
+          : CursorStyle.basic,
     );
   }
 
