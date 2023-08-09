@@ -51,7 +51,11 @@ void main() {
       await tester.pumpAndSettle();
       expect(widgetOneFinder, findsNothing);
       expect(widgetTwoFinder, findsOneWidget);
-      await tester.tap(widgetTwoFinder, buttons: kSecondaryButton);
+      await tester.tap(
+        widgetTwoFinder,
+        buttons: kSecondaryButton,
+        warnIfMissed: false,
+      );
       await tester.pumpAndSettle();
       expect(widgetTwoFinder, findsNothing);
       expect(widgetOneFinder, findsOneWidget);
