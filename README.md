@@ -14,13 +14,13 @@ for crafting engaging and interactive presentations.\
 
 Feel free to either **fork** or **clone** the repo, whatever you prefer.\
 Select branch `main` for latest stable version.\
-Select latest release branch `release/1.1.0` for newest features.
+Select latest release branch `release/1.2.0` for newest features.
 
 ### Running FlutterShow⚡️
 
 ```bash
 # (Optional) Checkout release branch for newest features
-$ git checkout release/1.1.0
+$ git checkout release/1.2.0
 
 # Get dependencies
 $ flutter pub get
