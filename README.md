@@ -73,7 +73,7 @@ In addition to animating individual slides and widgets, you can also animate the
 
 Use the `Code Display` to present your beautiful code:
 
-![Code Display](docs/images/code_display.png)
+<img src='docs/images/code_display.png' alt="Code Display" width='500'>
 
 ### Rebindable Keys
 
@@ -83,7 +83,7 @@ You can easily rebind your keys for actions like navigating to the next or previ
 
 Using the **O key** the mouse cursor can be hidden or shown again. Optionally it is possible to set a custom cursor as it can be seen here:
 
-<img src='docs/images/custom_cursor.png' alt="Code Display" width='50'>
+![Custom Cursor](docs/images/custom_cursor.png)
 
 ## Talks using FlutterShow⚡️
 
