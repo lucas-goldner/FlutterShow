@@ -33,7 +33,6 @@ dev_dependencies:
 flutter:
   generate: true
   assets:
-    - assets/audio/
     - assets/fonts/
     - assets/images/custom/
     - assets/images/shared/
