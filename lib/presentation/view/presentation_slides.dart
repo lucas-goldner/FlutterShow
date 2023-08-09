@@ -85,8 +85,8 @@ class PresentationSlides extends HookConsumerWidget {
                 duration: const Duration(milliseconds: 500),
                 child: SizedBox(
                   height: presentation.menuOpen
-                      ? 0
-                      : FSStyleConstants.getMenuHeight(size),
+                      ? FSStyleConstants.getMenuHeight(size)
+                      : 0,
                   child: const Menu(),
                 ),
               ),

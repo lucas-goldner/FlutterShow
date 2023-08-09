@@ -166,17 +166,24 @@ class PresentationController extends StateNotifier<Presentation> {
   }
 
   void toggleMenu() {
-    if (state.menuOpen && state.cursorStyle == CursorStyle.hidden) {
-      state = state.copyWith(
-        menuOpen: !state.menuOpen,
-        cursorStyle: CursorStyle.basic,
-      );
+    if (_hasOpenedMenuAndToggledVisibilityForCursor()) {
       return;
     }
 
     state = state.copyWith(
       menuOpen: !state.menuOpen,
     );
+  }
+
+  bool _hasOpenedMenuAndToggledVisibilityForCursor() {
+    if (!state.menuOpen && state.cursorStyle == CursorStyle.hidden) {
+      state = state.copyWith(
+        cursorStyle: CursorStyle.basic,
+        menuOpen: true,
+      );
+      return true;
+    }
+    return false;
   }
 }
 
