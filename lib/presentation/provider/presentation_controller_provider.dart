@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_show/presentation/config/contants.dart';
+import 'package:flutter_show/presentation/config/cursor_style.dart';
 import 'package:flutter_show/presentation/config/key_actions.dart';
-import 'package:flutter_show/presentation/config/mouse_style.dart';
 import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/model/presentation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,39 +22,53 @@ class PresentationController extends StateNotifier<Presentation> {
           ),
         );
 
-  /// This function listens to all key events
   KeyEventResult handleKeyEvents(
     RawKeyEvent event,
-    ValueNotifier<bool> keyPressed,
   ) {
-    if (event is RawKeyDownEvent && !keyPressed.value) {
-      if (KeyActions.goToLastSlide.keybindings
-          .any((key) => key == event.physicalKey)) {
+    if (event is RawKeyDownEvent) {
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.goToLastSlide,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
         goToLastItem();
-        keyPressed.value = true;
         return KeyEventResult.handled;
       }
 
-      if (KeyActions.goToNextSlide.keybindings
-          .any((key) => key == event.physicalKey)) {
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.goToNextSlide,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
         goToNextItem();
-        keyPressed.value = true;
         return KeyEventResult.handled;
       }
 
-      if (KeyActions.openMenu.keybindings
-          .any((key) => key == event.physicalKey)) {
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.openMenu,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
         toggleMenu();
-        keyPressed.value = true;
+        return KeyEventResult.handled;
+      }
+
+      if (_hasTriggeredKeyAction(
+        keyAction: KeyActions.showHideMouse,
+        physicalKeyboardKey: event.physicalKey,
+      )) {
+        toggleMouseVisibility();
         return KeyEventResult.handled;
       }
 
       return KeyEventResult.ignored;
-    } else if (event is RawKeyUpEvent) {
-      keyPressed.value = false;
     }
+
     return KeyEventResult.ignored;
   }
+
+  bool _hasTriggeredKeyAction({
+    required KeyActions keyAction,
+    required PhysicalKeyboardKey physicalKeyboardKey,
+  }) =>
+      keyAction.keybindings.any((key) => key == physicalKeyboardKey);
 
   /// This function is used in to increase the `animationIndex` to
   /// show or animate the next widget. If it hits the slides `animationSteps`
@@ -115,8 +129,6 @@ class PresentationController extends StateNotifier<Presentation> {
     }
   }
 
-  /// This function is used for the quicktravel on the Menu
-  /// in order to switch between slides quickly
   void switchToPage(int index) {
     state = state.copyWith(page: index, animationIndex: 0);
     state.pageController.animateToPage(
@@ -136,22 +148,39 @@ class PresentationController extends StateNotifier<Presentation> {
         locale: locale,
       );
 
-  void setMouseStyle(MouseStyle mouseStyle) => state = state.copyWith(
-        mouseStyle: mouseStyle,
-      );
+  void setCursorStyle(CursorStyle cursorStyle) {
+    state = state.copyWith(
+      cursorStyle: cursorStyle,
+    );
+  }
+
+  void toggleMouseVisibility() {
+    state = state.copyWith(
+      cursorStyle: state.cursorStyle == CursorStyle.basic
+          ? CursorStyle.hidden
+          : CursorStyle.basic,
+    );
+  }
 
   void toggleMenu() {
-    if (!state.menuOpen && state.mouseStyle == MouseStyle.hidden) {
-      state = state.copyWith(
-        menuOpen: !state.menuOpen,
-        mouseStyle: MouseStyle.basic,
-      );
+    if (_hasOpenedMenuAndToggledVisibilityForCursor()) {
       return;
     }
 
     state = state.copyWith(
       menuOpen: !state.menuOpen,
     );
+  }
+
+  bool _hasOpenedMenuAndToggledVisibilityForCursor() {
+    if (!state.menuOpen && state.cursorStyle == CursorStyle.hidden) {
+      state = state.copyWith(
+        cursorStyle: CursorStyle.basic,
+        menuOpen: true,
+      );
+      return true;
+    }
+    return false;
   }
 }
 

@@ -3,20 +3,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_show/generated/l10n.dart';
 
-enum MouseStyle {
-  basic('Default Mouse', SystemMouseCursors.basic),
-  hidden('No Mouse', SystemMouseCursors.none),
-  custom('Custom Mouse', SystemMouseCursors.basic);
+enum CursorStyle {
+  basic('Default Cursor', SystemMouseCursors.basic),
+  hidden('No Cursor', SystemMouseCursors.none),
+  custom('Custom Cursor', SystemMouseCursors.basic);
 
-  const MouseStyle(this.styleName, this.cursor);
+  const CursorStyle(this.styleName, this._cursor);
 
   final String styleName;
-  final MouseCursor cursor;
+  final MouseCursor _cursor;
 
   String getLocalizedName(BuildContext context) => switch (this) {
-        MouseStyle.basic => S.of(context).basic,
-        MouseStyle.hidden => S.of(context).hidden,
-        MouseStyle.custom => S.of(context).custom,
+        CursorStyle.basic => S.of(context).basic,
+        CursorStyle.hidden => S.of(context).hidden,
+        CursorStyle.custom => S.of(context).custom,
+      };
+
+  Future<MouseCursor> get cursor => switch (this) {
+        CursorStyle.basic => Future.value(_cursor),
+        CursorStyle.hidden => Future.value(_cursor),
+        CursorStyle.custom => customCursor,
       };
 
   /// Edit the custom cursor however you like:

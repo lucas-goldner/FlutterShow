@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_show/presentation/config/mouse_style.dart';
+import 'package:flutter_show/presentation/config/cursor_style.dart';
 import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/slides/04_downsides/view/downsides_slide.dart';
@@ -13,7 +13,7 @@ class Presentation {
     required this.brightness,
     required this.menuOpen,
     required this.pageController,
-    this.mouseStyle = MouseStyle.basic,
+    this.cursorStyle = CursorStyle.basic,
   });
 
   /// Represents the current step of the animation in the presentation.
@@ -51,7 +51,7 @@ class Presentation {
   final Brightness brightness;
 
   /// Sets the current mouse style.
-  final MouseStyle mouseStyle;
+  final CursorStyle cursorStyle;
 
   /// Indicates whether the menu is open or closed.
   final bool menuOpen;
@@ -65,14 +65,14 @@ class Presentation {
     Locale? locale,
     bool? menuOpen,
     Brightness? brightness,
-    MouseStyle? mouseStyle,
+    CursorStyle? cursorStyle,
   }) {
     return Presentation(
       animationIndex: animationIndex ?? this.animationIndex,
       page: page ?? this.page,
       locale: locale ?? this.locale,
       brightness: brightness ?? this.brightness,
-      mouseStyle: mouseStyle ?? this.mouseStyle,
+      cursorStyle: cursorStyle ?? this.cursorStyle,
       menuOpen: menuOpen ?? this.menuOpen,
       pageController: pageController,
     );
