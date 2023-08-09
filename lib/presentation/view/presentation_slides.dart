@@ -47,11 +47,12 @@ class PresentationSlides extends HookConsumerWidget {
               child:
 
                   /// Use the prebuild widgets such as [PageBuilderPresentation]
-                  /// for your presentation format.
+                  /// for your presentation format. Check out more presentation
+                  /// widgets at: [https://flutter-show-docs.vercel.app/docs/fluttershow_base/presentations]
                   ///
-                  /// Notice: Some of the preview slides are wrapped with a
-                  /// custom animation, these presentation widgets can be seen
-                  /// as the `default` way of animating between slides.
+                  /// Notice: Some of the prebuilt slides are wrapped with a
+                  /// custom animation. The presentation widgets here can be
+                  /// seen as the `default` way of animating between slides.
                   PageBuilderPresentation(
                 presentationPages: presentationSlides,
                 pageController: presentation.pageController,
@@ -62,14 +63,6 @@ class PresentationSlides extends HookConsumerWidget {
               //  FadingPresentation(
               //   pageIndex: presentation.page,
               //   presentationPages: presentationSlides,
-              //   pageController: presentation.pageController,
-              // ),
-
-              /// Prefer seeing your slides popping onto the screen?
-              ///
-              //  ScalingPresentation(
-              //   pageIndex: presentation.page,
-              //   presentationPages: presentationSlides
               //   pageController: presentation.pageController,
               // ),
 
