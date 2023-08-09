@@ -5,6 +5,7 @@ import 'package:flutter_show/presentation/provider/presentation_controller_provi
 import 'package:flutter_show/presentation/view/presentation_slides.dart';
 import 'package:flutter_show/styles/theme/dark_theme.dart';
 import 'package:flutter_show/styles/theme/light_theme.dart';
+import 'package:fluttershow_base/components/model/presentation_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
@@ -12,21 +13,26 @@ void main() {
 }
 
 class MyFlutterShow extends ConsumerWidget {
-  const MyFlutterShow({super.key});
+  const MyFlutterShow({this.slides, super.key});
+
+  /// Used for widget tests, safe to ignore.
+  @visibleForTesting
+  final List<PresentationSlide>? slides;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.watch(presentationController);
+    final presentation = ref.watch(presentationController);
 
     return CupertinoApp(
       key: const Key('FlutterShow'),
-      locale: controller.locale,
-      theme: controller.brightness == Brightness.dark ? darkTheme : lightTheme,
+      locale: presentation.locale,
+      theme:
+          presentation.brightness == Brightness.dark ? darkTheme : lightTheme,
       home: FutureBuilder(
-        future: controller.cursorStyle.cursor,
+        future: presentation.cursorStyle.cursor,
         builder: (context, snapshot) => MouseRegion(
           cursor: snapshot.data ?? SystemMouseCursors.basic,
-          child: const PresentationSlides(),
+          child: PresentationSlides(slides: slides),
         ),
       ),
       debugShowCheckedModeBanner: false,

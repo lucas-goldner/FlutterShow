@@ -22,7 +22,6 @@ class PresentationController extends StateNotifier<Presentation> {
           ),
         );
 
-  /// This function listens to all key events
   KeyEventResult handleKeyEvents(
     RawKeyEvent event,
   ) {
@@ -130,8 +129,6 @@ class PresentationController extends StateNotifier<Presentation> {
     }
   }
 
-  /// This function is used for the quicktravel on the Menu
-  /// in order to switch between slides quickly
   void switchToPage(int index) {
     state = state.copyWith(page: index, animationIndex: 0);
     state.pageController.animateToPage(

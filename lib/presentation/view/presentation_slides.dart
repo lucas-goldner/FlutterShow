@@ -4,14 +4,20 @@ import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:flutter_show/presentation/widgets/menu.dart';
 import 'package:flutter_show/styles/fs_style_constants.dart';
-import 'package:fluttershow_base/components/widgets/presentation/page_builder_presentation.dart';
+import 'package:fluttershow_base/components/widgets/fluttershow_base_components.dart';
+import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PresentationSlides extends HookConsumerWidget {
-  const PresentationSlides({super.key});
+  const PresentationSlides({this.slides, super.key});
+
+  /// Used for widget tests, safe to ignore.
+  @visibleForTesting
+  final List<PresentationSlide>? slides;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final presentationSlides = slides ?? PagesOfPresentation.values.slides;
     final presentation = ref.watch(presentationController);
     final controller =
         ref.read<PresentationController>(presentationController.notifier);
@@ -47,35 +53,35 @@ class PresentationSlides extends HookConsumerWidget {
                   /// custom animation, these presentation widgets can be seen
                   /// as the `default` way of animating between slides.
                   PageBuilderPresentation(
-                presentationPages: PagesOfPresentation.values.slides,
+                presentationPages: presentationSlides,
                 pageController: presentation.pageController,
               ),
 
               /// You are a fan of fading? Try this one!
               ///
-              //     FadingPresentation(
+              //  FadingPresentation(
               //   pageIndex: presentation.page,
-              //   presentationPages: PagesOfPresentation.values.slides,
+              //   presentationPages: presentationSlides,
               //   pageController: presentation.pageController,
               // ),
 
               /// Prefer seeing your slides popping onto the screen?
               ///
-              //     ScalingPresentation(
+              //  ScalingPresentation(
               //   pageIndex: presentation.page,
-              //   presentationPages: PagesOfPresentation.values.slides,
+              //   presentationPages: presentationSlides
               //   pageController: presentation.pageController,
               // ),
 
               /// Or craft something amazing yourself
               /// using the default implementation as a template.
               ///
-              // PageView.builder(
+              //  PageView.builder(
               //   physics: const NeverScrollableScrollPhysics(),
-              //   itemCount: PagesOfPresentation.values.length,
+              //   itemCount: presentationSlides.length,
               //   controller: presentation.pageController,
               //   itemBuilder: (context, index) =>
-              //       PagesOfPresentation.values[index].slide,
+              //       presentationSlides[index].slideWidget,
               // ),
             ),
             Align(
@@ -87,7 +93,9 @@ class PresentationSlides extends HookConsumerWidget {
                   height: presentation.menuOpen
                       ? FSStyleConstants.getMenuHeight(size)
                       : 0,
-                  child: const Menu(),
+                  child: Menu(
+                    slides: slides,
+                  ),
                 ),
               ),
             )

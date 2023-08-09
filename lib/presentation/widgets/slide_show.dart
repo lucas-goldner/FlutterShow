@@ -2,20 +2,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
+import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SlideShow extends ConsumerWidget {
-  const SlideShow({super.key});
+  const SlideShow({this.slides, super.key});
+
+  /// Used for widget tests, safe to ignore.
+  @visibleForTesting
+  final List<PresentationSlide>? slides;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final presentationSlidesIndexed =
+        slides?.asMap().entries.map((slide) => (slide.key, slide.value)) ??
+            PagesOfPresentation.values.slides.indexed;
+
     void switchToSlide(int index) =>
         ref.read(presentationController.notifier).switchToPage(index);
 
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: PagesOfPresentation.values.slides.indexed
+        children: presentationSlidesIndexed
             .map(
               (entry) => GestureDetector(
                 onTap: () => switchToSlide(entry.$1),

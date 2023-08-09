@@ -8,12 +8,17 @@ import 'package:flutter_show/presentation/widgets/slide_show.dart';
 import 'package:flutter_show/styles/fs_colors.dart';
 import 'package:flutter_show/styles/fs_style_constants.dart';
 import 'package:flutter_show/styles/fs_text_styles.dart';
+import 'package:fluttershow_base/components/model/presentation_page.dart';
 import 'package:fluttershow_base/components/widgets/spacing/margins.dart';
 import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Menu extends HookConsumerWidget {
-  const Menu({super.key});
+  const Menu({this.slides, super.key});
+
+  /// Used for widget tests, safe to ignore.
+  @visibleForTesting
+  final List<PresentationSlide>? slides;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -122,7 +127,9 @@ class Menu extends HookConsumerWidget {
                                 style: FSTextStyles.footerText(),
                               ),
                             ),
-                            const SlideShow(),
+                            SlideShow(
+                              slides: slides,
+                            ),
                           ],
                         ),
                       ),
