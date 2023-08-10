@@ -90,6 +90,56 @@ class S {
     );
   }
 
+  /// `Locale`
+  String get language {
+    return Intl.message(
+      'Locale',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mouse`
+  String get mouse {
+    return Intl.message(
+      'Mouse',
+      name: 'mouse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basic`
+  String get basic {
+    return Intl.message(
+      'Basic',
+      name: 'basic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hidden`
+  String get hidden {
+    return Intl.message(
+      'Hidden',
+      name: 'hidden',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Custom`
+  String get custom {
+    return Intl.message(
+      'Custom',
+      name: 'custom',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `FlutterShow`
   String get flutterShow {
     return Intl.message(
@@ -330,16 +380,6 @@ class S {
     );
   }
 
-  /// `Step Two closer look`
-  String get step2close {
-    return Intl.message(
-      'Step Two closer look',
-      name: 'step2close',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Step Three`
   String get step3 {
     return Intl.message(
@@ -357,6 +397,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ja'),
     ];
   }
 

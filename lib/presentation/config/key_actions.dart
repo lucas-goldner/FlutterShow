@@ -13,6 +13,9 @@ enum KeyActions {
   ]),
   openMenu([
     PhysicalKeyboardKey.keyM,
+  ]),
+  showHideMouse([
+    PhysicalKeyboardKey.keyO,
   ]);
 
   const KeyActions(this.keybindings);

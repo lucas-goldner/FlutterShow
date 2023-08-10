@@ -1,23 +1,22 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_show/presentation/config/pages_of_presentation.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_show/presentation/config/presentation_slides.dart';
 import 'package:flutter_show/presentation/provider/presentation_controller_provider.dart';
 import 'package:fluttershow_base/components/widgets/spacing/paddings.dart';
+import 'package:fluttershow_base/fluttershow_base.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SlideShow extends ConsumerWidget {
-  const SlideShow({super.key});
+  const SlideShow({this.slides, super.key});
+
+  /// Used for widget tests, safe to ignore.
+  @visibleForTesting
+  final List<PresentationSlide>? slides;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Color generateRandomColor() {
-      final random = Random();
-      final r = random.nextInt(256);
-      final g = random.nextInt(256);
-      final b = random.nextInt(256);
-      return Color.fromARGB(255, r, g, b);
-    }
+    final presentationSlidesIndexed =
+        slides?.asMap().entries.map((slide) => (slide.key, slide.value)) ??
+            PagesOfPresentation.values.slides.indexed;
 
     void switchToSlide(int index) =>
         ref.read(presentationController.notifier).switchToPage(index);
@@ -25,14 +24,12 @@ class SlideShow extends ConsumerWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: PagesOfPresentation.values
-            .asMap()
-            .entries
+        children: presentationSlidesIndexed
             .map(
               (entry) => GestureDetector(
-                onTap: () => switchToSlide(entry.key),
+                onTap: () => switchToSlide(entry.$1),
                 child: Container(
-                  color: generateRandomColor(),
+                  color: CupertinoColors.activeBlue,
                   height: 100,
                   width: 100,
                   margin: allPadding12,
@@ -40,7 +37,7 @@ class SlideShow extends ConsumerWidget {
                     child: Padding(
                       padding: allPadding4,
                       child: Text(
-                        entry.value.title ?? 'Slide-${entry.key}',
+                        entry.$2.title ?? 'Slide-${entry.$1}',
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),

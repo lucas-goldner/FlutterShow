@@ -27,19 +27,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "annoying": MessageLookupByLibrary.simpleMessage("Annoying"),
         "author": MessageLookupByLibrary.simpleMessage("Made by Lucas Goldner"),
         "awesome": MessageLookupByLibrary.simpleMessage("Awesome"),
+        "basic": MessageLookupByLibrary.simpleMessage("Basic"),
         "benefits": MessageLookupByLibrary.simpleMessage("Benefits"),
         "boring": MessageLookupByLibrary.simpleMessage("Boring"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
+        "custom": MessageLookupByLibrary.simpleMessage("Custom"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Darkmode"),
         "downsides": MessageLookupByLibrary.simpleMessage("Downsides"),
         "flutterShow": MessageLookupByLibrary.simpleMessage("FlutterShow"),
         "great": MessageLookupByLibrary.simpleMessage("Great"),
+        "hidden": MessageLookupByLibrary.simpleMessage("Hidden"),
+        "language": MessageLookupByLibrary.simpleMessage("Locale"),
         "lazy": MessageLookupByLibrary.simpleMessage("Lazy"),
         "madeWith": MessageLookupByLibrary.simpleMessage("Made with:"),
         "madeWithFlutter":
             MessageLookupByLibrary.simpleMessage("Made with Flutter💙"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
         "motiviation": MessageLookupByLibrary.simpleMessage("Motiviation"),
+        "mouse": MessageLookupByLibrary.simpleMessage("Mouse"),
         "notFlutter": MessageLookupByLibrary.simpleMessage("Its not Flutter"),
         "outstanding": MessageLookupByLibrary.simpleMessage("Outstanding"),
         "party": MessageLookupByLibrary.simpleMessage("Party 🎉"),
@@ -52,8 +57,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "slides": MessageLookupByLibrary.simpleMessage("Slides"),
         "step1": MessageLookupByLibrary.simpleMessage("Step One"),
         "step2": MessageLookupByLibrary.simpleMessage("Step Two"),
-        "step2close":
-            MessageLookupByLibrary.simpleMessage("Step Two closer look"),
         "step3": MessageLookupByLibrary.simpleMessage("Step Three"),
         "thanks": MessageLookupByLibrary.simpleMessage("Thanks!")
       };
