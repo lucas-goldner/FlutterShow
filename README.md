@@ -40,7 +40,7 @@ $ flutter run -d macos
 When you first explore the project, you'll find some sample slides that demonstrate how slides are built in this project.\
 You have the option to use these as templates or completely discard them to begin anew.\
 \
-**🚨Check out this guide** to create **your first slide🚨** -> https://flutter-show-docs.vercel.app/docs/quick-start \
+**🚨Check out this guide** to create **your first slide🚨** -> https://flutter-show-docs.vercel.app/docs/quick_start \
 Once the application is running, use the _**M key**_ to open the **Menu**!
 
 ## General Information
